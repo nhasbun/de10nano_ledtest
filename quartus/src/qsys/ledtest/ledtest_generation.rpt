@@ -1,0 +1,69 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\ownCloud\Ecografo\FPGA\pruebas\de10nano\LedTest\src\qsys\ledtest.qsys --block-symbol-file --output-directory=D:\ownCloud\Ecografo\FPGA\pruebas\de10nano\LedTest\src\qsys\ledtest --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading qsys/ledtest.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 17.0]
+Progress: Parameterizing module hps_0
+Progress: Adding pio_0 [altera_avalon_pio 17.0]
+Progress: Parameterizing module pio_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ledtest.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: ledtest.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\ownCloud\Ecografo\FPGA\pruebas\de10nano\LedTest\src\qsys\ledtest.qsys --synthesis=VERILOG --output-directory=D:\ownCloud\Ecografo\FPGA\pruebas\de10nano\LedTest\src\qsys\ledtest\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading qsys/ledtest.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 17.0]
+Progress: Parameterizing module hps_0
+Progress: Adding pio_0 [altera_avalon_pio 17.0]
+Progress: Parameterizing module pio_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ledtest.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: ledtest.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: ledtest: Generating ledtest "ledtest" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave pio_0.s1 because the master is of type axi and the slave is of type avalon.
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps_0: "ledtest" instantiated altera_hps "hps_0"
+Info: pio_0: Starting RTL generation for module 'ledtest_pio_0'
+Info: pio_0:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_pio_0 --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7343_180298814731367084.dir/0017_pio_0_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7343_180298814731367084.dir/0017_pio_0_gen//ledtest_pio_0_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_0: Done RTL generation for module 'ledtest_pio_0'
+Info: pio_0: "ledtest" instantiated altera_avalon_pio "pio_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "ledtest" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "ledtest" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: pio_0_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "pio_0_s1_translator"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: pio_0_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "pio_0_s1_agent"
+Info: pio_0_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "pio_0_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: pio_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "pio_0_s1_burst_adapter"
+Info: Reusing file D:/ownCloud/Ecografo/FPGA/pruebas/de10nano/LedTest/src/qsys/ledtest/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/ownCloud/Ecografo/FPGA/pruebas/de10nano/LedTest/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: ledtest: Done "ledtest" with 21 modules, 77 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
