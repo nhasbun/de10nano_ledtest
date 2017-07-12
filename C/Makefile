@@ -1,5 +1,5 @@
 #
-TARGET = my_first_hps
+TARGET = ledtest
 
 #
 ALT_DEVICE_FAMILY ?= soc_cv_av

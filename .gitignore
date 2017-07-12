@@ -2,3 +2,5 @@ quartus/output_files/
 quartus/incremental_db/
 quartus/db/
 quartus/hps_isw_handoff/
+*.o
+C/ledtest
