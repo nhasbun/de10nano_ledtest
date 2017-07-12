@@ -4,3 +4,4 @@ quartus/db/
 quartus/hps_isw_handoff/
 *.o
 C/ledtest
+*.qws
