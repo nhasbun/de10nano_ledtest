@@ -1,5 +1,7 @@
 module top(
   input clock,
+  
+  input switch,
   output reg led,
 
   output wire        hps_io_hps_io_emac1_inst_TX_CLK,  // hps_io.hps_io_emac1_inst_TX_CLK
@@ -40,8 +42,7 @@ wire led_hps, clk_clk;
 assign clk_clk = clock;
 assign led_hps = pio_0_external_connection_export;
 
-ledtest inst_ledtest
-(
+ledtest inst_ledtest(
   .clk_clk                          (clk_clk),
   .hps_io_hps_io_emac1_inst_TX_CLK  (hps_io_hps_io_emac1_inst_TX_CLK),
   .hps_io_hps_io_emac1_inst_TXD0    (hps_io_hps_io_emac1_inst_TXD0),
@@ -73,7 +74,8 @@ ledtest inst_ledtest
   .memory_mem_odt                   (memory_mem_odt),
   .memory_mem_dm                    (memory_mem_dm),
   .memory_oct_rzqin                 (memory_oct_rzqin),
-  .pio_0_external_connection_export (pio_0_external_connection_export)
+  .pio_0_external_connection_export (pio_0_external_connection_export),
+  .switch_export                    (switch)  
 );
 
 always @(posedge clock) led <= led_hps;

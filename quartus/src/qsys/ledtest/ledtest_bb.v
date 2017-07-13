@@ -1,6 +1,20 @@
 
 module ledtest (
 	clk_clk,
+	hps_io_hps_io_emac1_inst_TX_CLK,
+	hps_io_hps_io_emac1_inst_TXD0,
+	hps_io_hps_io_emac1_inst_TXD1,
+	hps_io_hps_io_emac1_inst_TXD2,
+	hps_io_hps_io_emac1_inst_TXD3,
+	hps_io_hps_io_emac1_inst_RXD0,
+	hps_io_hps_io_emac1_inst_MDIO,
+	hps_io_hps_io_emac1_inst_MDC,
+	hps_io_hps_io_emac1_inst_RX_CTL,
+	hps_io_hps_io_emac1_inst_TX_CTL,
+	hps_io_hps_io_emac1_inst_RX_CLK,
+	hps_io_hps_io_emac1_inst_RXD1,
+	hps_io_hps_io_emac1_inst_RXD2,
+	hps_io_hps_io_emac1_inst_RXD3,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -18,22 +32,23 @@ module ledtest (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	pio_0_external_connection_export,
-	hps_io_hps_io_emac1_inst_TX_CLK,
-	hps_io_hps_io_emac1_inst_TXD0,
-	hps_io_hps_io_emac1_inst_TXD1,
-	hps_io_hps_io_emac1_inst_TXD2,
-	hps_io_hps_io_emac1_inst_TXD3,
-	hps_io_hps_io_emac1_inst_RXD0,
-	hps_io_hps_io_emac1_inst_MDIO,
-	hps_io_hps_io_emac1_inst_MDC,
-	hps_io_hps_io_emac1_inst_RX_CTL,
-	hps_io_hps_io_emac1_inst_TX_CTL,
-	hps_io_hps_io_emac1_inst_RX_CLK,
-	hps_io_hps_io_emac1_inst_RXD1,
-	hps_io_hps_io_emac1_inst_RXD2,
-	hps_io_hps_io_emac1_inst_RXD3);	
+	switch_export);	
 
 	input		clk_clk;
+	output		hps_io_hps_io_emac1_inst_TX_CLK;
+	output		hps_io_hps_io_emac1_inst_TXD0;
+	output		hps_io_hps_io_emac1_inst_TXD1;
+	output		hps_io_hps_io_emac1_inst_TXD2;
+	output		hps_io_hps_io_emac1_inst_TXD3;
+	input		hps_io_hps_io_emac1_inst_RXD0;
+	inout		hps_io_hps_io_emac1_inst_MDIO;
+	output		hps_io_hps_io_emac1_inst_MDC;
+	input		hps_io_hps_io_emac1_inst_RX_CTL;
+	output		hps_io_hps_io_emac1_inst_TX_CTL;
+	input		hps_io_hps_io_emac1_inst_RX_CLK;
+	input		hps_io_hps_io_emac1_inst_RXD1;
+	input		hps_io_hps_io_emac1_inst_RXD2;
+	input		hps_io_hps_io_emac1_inst_RXD3;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;
@@ -51,18 +66,5 @@ module ledtest (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	output		pio_0_external_connection_export;
-	output		hps_io_hps_io_emac1_inst_TX_CLK;
-	output		hps_io_hps_io_emac1_inst_TXD0;
-	output		hps_io_hps_io_emac1_inst_TXD1;
-	output		hps_io_hps_io_emac1_inst_TXD2;
-	output		hps_io_hps_io_emac1_inst_TXD3;
-	input		hps_io_hps_io_emac1_inst_RXD0;
-	inout		hps_io_hps_io_emac1_inst_MDIO;
-	output		hps_io_hps_io_emac1_inst_MDC;
-	input		hps_io_hps_io_emac1_inst_RX_CTL;
-	output		hps_io_hps_io_emac1_inst_TX_CTL;
-	input		hps_io_hps_io_emac1_inst_RX_CLK;
-	input		hps_io_hps_io_emac1_inst_RXD1;
-	input		hps_io_hps_io_emac1_inst_RXD2;
-	input		hps_io_hps_io_emac1_inst_RXD3;
+	input		switch_export;
 endmodule

@@ -1,6 +1,20 @@
 	component ledtest is
 		port (
 			clk_clk                          : in    std_logic                     := 'X';             -- clk
+			hps_io_hps_io_emac1_inst_TX_CLK  : out   std_logic;                                        -- hps_io_emac1_inst_TX_CLK
+			hps_io_hps_io_emac1_inst_TXD0    : out   std_logic;                                        -- hps_io_emac1_inst_TXD0
+			hps_io_hps_io_emac1_inst_TXD1    : out   std_logic;                                        -- hps_io_emac1_inst_TXD1
+			hps_io_hps_io_emac1_inst_TXD2    : out   std_logic;                                        -- hps_io_emac1_inst_TXD2
+			hps_io_hps_io_emac1_inst_TXD3    : out   std_logic;                                        -- hps_io_emac1_inst_TXD3
+			hps_io_hps_io_emac1_inst_RXD0    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD0
+			hps_io_hps_io_emac1_inst_MDIO    : inout std_logic                     := 'X';             -- hps_io_emac1_inst_MDIO
+			hps_io_hps_io_emac1_inst_MDC     : out   std_logic;                                        -- hps_io_emac1_inst_MDC
+			hps_io_hps_io_emac1_inst_RX_CTL  : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RX_CTL
+			hps_io_hps_io_emac1_inst_TX_CTL  : out   std_logic;                                        -- hps_io_emac1_inst_TX_CTL
+			hps_io_hps_io_emac1_inst_RX_CLK  : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RX_CLK
+			hps_io_hps_io_emac1_inst_RXD1    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD1
+			hps_io_hps_io_emac1_inst_RXD2    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD2
+			hps_io_hps_io_emac1_inst_RXD3    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD3
 			memory_mem_a                     : out   std_logic_vector(14 downto 0);                    -- mem_a
 			memory_mem_ba                    : out   std_logic_vector(2 downto 0);                     -- mem_ba
 			memory_mem_ck                    : out   std_logic;                                        -- mem_ck
@@ -18,26 +32,27 @@
 			memory_mem_dm                    : out   std_logic_vector(3 downto 0);                     -- mem_dm
 			memory_oct_rzqin                 : in    std_logic                     := 'X';             -- oct_rzqin
 			pio_0_external_connection_export : out   std_logic;                                        -- export
-			hps_io_hps_io_emac1_inst_TX_CLK  : out   std_logic;                                        -- hps_io_emac1_inst_TX_CLK
-			hps_io_hps_io_emac1_inst_TXD0    : out   std_logic;                                        -- hps_io_emac1_inst_TXD0
-			hps_io_hps_io_emac1_inst_TXD1    : out   std_logic;                                        -- hps_io_emac1_inst_TXD1
-			hps_io_hps_io_emac1_inst_TXD2    : out   std_logic;                                        -- hps_io_emac1_inst_TXD2
-			hps_io_hps_io_emac1_inst_TXD3    : out   std_logic;                                        -- hps_io_emac1_inst_TXD3
-			hps_io_hps_io_emac1_inst_RXD0    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD0
-			hps_io_hps_io_emac1_inst_MDIO    : inout std_logic                     := 'X';             -- hps_io_emac1_inst_MDIO
-			hps_io_hps_io_emac1_inst_MDC     : out   std_logic;                                        -- hps_io_emac1_inst_MDC
-			hps_io_hps_io_emac1_inst_RX_CTL  : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RX_CTL
-			hps_io_hps_io_emac1_inst_TX_CTL  : out   std_logic;                                        -- hps_io_emac1_inst_TX_CTL
-			hps_io_hps_io_emac1_inst_RX_CLK  : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RX_CLK
-			hps_io_hps_io_emac1_inst_RXD1    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD1
-			hps_io_hps_io_emac1_inst_RXD2    : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD2
-			hps_io_hps_io_emac1_inst_RXD3    : in    std_logic                     := 'X'              -- hps_io_emac1_inst_RXD3
+			switch_export                    : in    std_logic                     := 'X'              -- export
 		);
 	end component ledtest;
 
 	u0 : component ledtest
 		port map (
 			clk_clk                          => CONNECTED_TO_clk_clk,                          --                       clk.clk
+			hps_io_hps_io_emac1_inst_TX_CLK  => CONNECTED_TO_hps_io_hps_io_emac1_inst_TX_CLK,  --                    hps_io.hps_io_emac1_inst_TX_CLK
+			hps_io_hps_io_emac1_inst_TXD0    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD0,    --                          .hps_io_emac1_inst_TXD0
+			hps_io_hps_io_emac1_inst_TXD1    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD1,    --                          .hps_io_emac1_inst_TXD1
+			hps_io_hps_io_emac1_inst_TXD2    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD2,    --                          .hps_io_emac1_inst_TXD2
+			hps_io_hps_io_emac1_inst_TXD3    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD3,    --                          .hps_io_emac1_inst_TXD3
+			hps_io_hps_io_emac1_inst_RXD0    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD0,    --                          .hps_io_emac1_inst_RXD0
+			hps_io_hps_io_emac1_inst_MDIO    => CONNECTED_TO_hps_io_hps_io_emac1_inst_MDIO,    --                          .hps_io_emac1_inst_MDIO
+			hps_io_hps_io_emac1_inst_MDC     => CONNECTED_TO_hps_io_hps_io_emac1_inst_MDC,     --                          .hps_io_emac1_inst_MDC
+			hps_io_hps_io_emac1_inst_RX_CTL  => CONNECTED_TO_hps_io_hps_io_emac1_inst_RX_CTL,  --                          .hps_io_emac1_inst_RX_CTL
+			hps_io_hps_io_emac1_inst_TX_CTL  => CONNECTED_TO_hps_io_hps_io_emac1_inst_TX_CTL,  --                          .hps_io_emac1_inst_TX_CTL
+			hps_io_hps_io_emac1_inst_RX_CLK  => CONNECTED_TO_hps_io_hps_io_emac1_inst_RX_CLK,  --                          .hps_io_emac1_inst_RX_CLK
+			hps_io_hps_io_emac1_inst_RXD1    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD1,    --                          .hps_io_emac1_inst_RXD1
+			hps_io_hps_io_emac1_inst_RXD2    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD2,    --                          .hps_io_emac1_inst_RXD2
+			hps_io_hps_io_emac1_inst_RXD3    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD3,    --                          .hps_io_emac1_inst_RXD3
 			memory_mem_a                     => CONNECTED_TO_memory_mem_a,                     --                    memory.mem_a
 			memory_mem_ba                    => CONNECTED_TO_memory_mem_ba,                    --                          .mem_ba
 			memory_mem_ck                    => CONNECTED_TO_memory_mem_ck,                    --                          .mem_ck
@@ -55,19 +70,6 @@
 			memory_mem_dm                    => CONNECTED_TO_memory_mem_dm,                    --                          .mem_dm
 			memory_oct_rzqin                 => CONNECTED_TO_memory_oct_rzqin,                 --                          .oct_rzqin
 			pio_0_external_connection_export => CONNECTED_TO_pio_0_external_connection_export, -- pio_0_external_connection.export
-			hps_io_hps_io_emac1_inst_TX_CLK  => CONNECTED_TO_hps_io_hps_io_emac1_inst_TX_CLK,  --                    hps_io.hps_io_emac1_inst_TX_CLK
-			hps_io_hps_io_emac1_inst_TXD0    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD0,    --                          .hps_io_emac1_inst_TXD0
-			hps_io_hps_io_emac1_inst_TXD1    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD1,    --                          .hps_io_emac1_inst_TXD1
-			hps_io_hps_io_emac1_inst_TXD2    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD2,    --                          .hps_io_emac1_inst_TXD2
-			hps_io_hps_io_emac1_inst_TXD3    => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD3,    --                          .hps_io_emac1_inst_TXD3
-			hps_io_hps_io_emac1_inst_RXD0    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD0,    --                          .hps_io_emac1_inst_RXD0
-			hps_io_hps_io_emac1_inst_MDIO    => CONNECTED_TO_hps_io_hps_io_emac1_inst_MDIO,    --                          .hps_io_emac1_inst_MDIO
-			hps_io_hps_io_emac1_inst_MDC     => CONNECTED_TO_hps_io_hps_io_emac1_inst_MDC,     --                          .hps_io_emac1_inst_MDC
-			hps_io_hps_io_emac1_inst_RX_CTL  => CONNECTED_TO_hps_io_hps_io_emac1_inst_RX_CTL,  --                          .hps_io_emac1_inst_RX_CTL
-			hps_io_hps_io_emac1_inst_TX_CTL  => CONNECTED_TO_hps_io_hps_io_emac1_inst_TX_CTL,  --                          .hps_io_emac1_inst_TX_CTL
-			hps_io_hps_io_emac1_inst_RX_CLK  => CONNECTED_TO_hps_io_hps_io_emac1_inst_RX_CLK,  --                          .hps_io_emac1_inst_RX_CLK
-			hps_io_hps_io_emac1_inst_RXD1    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD1,    --                          .hps_io_emac1_inst_RXD1
-			hps_io_hps_io_emac1_inst_RXD2    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD2,    --                          .hps_io_emac1_inst_RXD2
-			hps_io_hps_io_emac1_inst_RXD3    => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD3     --                          .hps_io_emac1_inst_RXD3
+			switch_export                    => CONNECTED_TO_switch_export                     --                    switch.export
 		);
 
