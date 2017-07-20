@@ -6,7 +6,9 @@ Se divide la estructura en 3 etapas:
 
 - Encender un led de la FPGA mapeado a memoria en el HPS.
 - Encender un led de la FPGA según la posición de un switch, ambos mapeados a memoria, con el HPS revisando continuamente.
-- Encende un led de la FPGA según la posición de un switch que despierta una interrupción en el HPS para revisar el estado del switch.
+- Encende un led de la FPGA según la posición de un switch que despierta una interrupción en el HPS para revisar el estado del switch.**
+
+> 19-07-2017 ** No encontré información suficiente en las librerías para implementar la captura de interrupciones bajo Linux. Por ahora las interrupciones se simulan usando pthreads y leyendo constantemente ciertas direcciones. 
 
 ## Documentación librerías de Altera para HPS ##
 
