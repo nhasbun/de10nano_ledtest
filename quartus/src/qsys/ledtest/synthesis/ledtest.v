@@ -101,14 +101,8 @@ module ledtest (
 	wire   [1:0] mm_interconnect_1_pio_0_s1_address;             // mm_interconnect_1:pio_0_s1_address -> pio_0:address
 	wire         mm_interconnect_1_pio_0_s1_write;               // mm_interconnect_1:pio_0_s1_write -> pio_0:write_n
 	wire  [31:0] mm_interconnect_1_pio_0_s1_writedata;           // mm_interconnect_1:pio_0_s1_writedata -> pio_0:writedata
-	wire         mm_interconnect_1_switchpio_s1_chipselect;      // mm_interconnect_1:switchPIO_s1_chipselect -> switchPIO:chipselect
 	wire  [31:0] mm_interconnect_1_switchpio_s1_readdata;        // switchPIO:readdata -> mm_interconnect_1:switchPIO_s1_readdata
 	wire   [1:0] mm_interconnect_1_switchpio_s1_address;         // mm_interconnect_1:switchPIO_s1_address -> switchPIO:address
-	wire         mm_interconnect_1_switchpio_s1_write;           // mm_interconnect_1:switchPIO_s1_write -> switchPIO:write_n
-	wire  [31:0] mm_interconnect_1_switchpio_s1_writedata;       // mm_interconnect_1:switchPIO_s1_writedata -> switchPIO:writedata
-	wire         irq_mapper_receiver0_irq;                       // switchPIO:irq -> irq_mapper:receiver0_irq
-	wire  [31:0] hps_0_f2h_irq0_irq;                             // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
-	wire  [31:0] hps_0_f2h_irq1_irq;                             // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
 	wire         rst_controller_reset_out_reset;                 // rst_controller:reset_out -> [mm_bridge_0:reset, mm_interconnect_0:mm_bridge_0_reset_reset_bridge_in_reset_reset, mm_interconnect_1:mm_bridge_0_reset_reset_bridge_in_reset_reset, pio_0:reset_n, switchPIO:reset_n]
 	wire         rst_controller_001_reset_out_reset;             // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
@@ -183,9 +177,7 @@ module ledtest (
 		.h2f_lw_RRESP             (hps_0_h2f_lw_axi_master_rresp),   //                  .rresp
 		.h2f_lw_RLAST             (hps_0_h2f_lw_axi_master_rlast),   //                  .rlast
 		.h2f_lw_RVALID            (hps_0_h2f_lw_axi_master_rvalid),  //                  .rvalid
-		.h2f_lw_RREADY            (hps_0_h2f_lw_axi_master_rready),  //                  .rready
-		.f2h_irq_p0               (hps_0_f2h_irq0_irq),              //          f2h_irq0.irq
-		.f2h_irq_p1               (hps_0_f2h_irq1_irq)               //          f2h_irq1.irq
+		.h2f_lw_RREADY            (hps_0_h2f_lw_axi_master_rready)   //                  .rready
 	);
 
 	altera_avalon_mm_bridge #(
@@ -234,15 +226,11 @@ module ledtest (
 	);
 
 	ledtest_switchPIO switchpio (
-		.clk        (clk_clk),                                   //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
-		.address    (mm_interconnect_1_switchpio_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_1_switchpio_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_1_switchpio_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_1_switchpio_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_1_switchpio_s1_readdata),   //                    .readdata
-		.in_port    (switch_export),                             // external_connection.export
-		.irq        (irq_mapper_receiver0_irq)                   //                 irq.irq
+		.clk      (clk_clk),                                 //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address  (mm_interconnect_1_switchpio_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_1_switchpio_s1_readdata), //                    .readdata
+		.in_port  (switch_export)                            // external_connection.export
 	);
 
 	ledtest_mm_interconnect_0 mm_interconnect_0 (
@@ -298,41 +286,25 @@ module ledtest (
 	);
 
 	ledtest_mm_interconnect_1 mm_interconnect_1 (
-		.clk_0_clk_clk                                 (clk_clk),                                   //                               clk_0_clk.clk
-		.mm_bridge_0_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),            // mm_bridge_0_reset_reset_bridge_in_reset.reset
-		.mm_bridge_0_m0_address                        (mm_bridge_0_m0_address),                    //                          mm_bridge_0_m0.address
-		.mm_bridge_0_m0_waitrequest                    (mm_bridge_0_m0_waitrequest),                //                                        .waitrequest
-		.mm_bridge_0_m0_burstcount                     (mm_bridge_0_m0_burstcount),                 //                                        .burstcount
-		.mm_bridge_0_m0_byteenable                     (mm_bridge_0_m0_byteenable),                 //                                        .byteenable
-		.mm_bridge_0_m0_read                           (mm_bridge_0_m0_read),                       //                                        .read
-		.mm_bridge_0_m0_readdata                       (mm_bridge_0_m0_readdata),                   //                                        .readdata
-		.mm_bridge_0_m0_readdatavalid                  (mm_bridge_0_m0_readdatavalid),              //                                        .readdatavalid
-		.mm_bridge_0_m0_write                          (mm_bridge_0_m0_write),                      //                                        .write
-		.mm_bridge_0_m0_writedata                      (mm_bridge_0_m0_writedata),                  //                                        .writedata
-		.mm_bridge_0_m0_debugaccess                    (mm_bridge_0_m0_debugaccess),                //                                        .debugaccess
-		.pio_0_s1_address                              (mm_interconnect_1_pio_0_s1_address),        //                                pio_0_s1.address
-		.pio_0_s1_write                                (mm_interconnect_1_pio_0_s1_write),          //                                        .write
-		.pio_0_s1_readdata                             (mm_interconnect_1_pio_0_s1_readdata),       //                                        .readdata
-		.pio_0_s1_writedata                            (mm_interconnect_1_pio_0_s1_writedata),      //                                        .writedata
-		.pio_0_s1_chipselect                           (mm_interconnect_1_pio_0_s1_chipselect),     //                                        .chipselect
-		.switchPIO_s1_address                          (mm_interconnect_1_switchpio_s1_address),    //                            switchPIO_s1.address
-		.switchPIO_s1_write                            (mm_interconnect_1_switchpio_s1_write),      //                                        .write
-		.switchPIO_s1_readdata                         (mm_interconnect_1_switchpio_s1_readdata),   //                                        .readdata
-		.switchPIO_s1_writedata                        (mm_interconnect_1_switchpio_s1_writedata),  //                                        .writedata
-		.switchPIO_s1_chipselect                       (mm_interconnect_1_switchpio_s1_chipselect)  //                                        .chipselect
-	);
-
-	ledtest_irq_mapper irq_mapper (
-		.clk           (),                         //       clk.clk
-		.reset         (),                         // clk_reset.reset
-		.receiver0_irq (irq_mapper_receiver0_irq), // receiver0.irq
-		.sender_irq    (hps_0_f2h_irq0_irq)        //    sender.irq
-	);
-
-	ledtest_irq_mapper_001 irq_mapper_001 (
-		.clk        (),                   //       clk.clk
-		.reset      (),                   // clk_reset.reset
-		.sender_irq (hps_0_f2h_irq1_irq)  //    sender.irq
+		.clk_0_clk_clk                                 (clk_clk),                                 //                               clk_0_clk.clk
+		.mm_bridge_0_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),          // mm_bridge_0_reset_reset_bridge_in_reset.reset
+		.mm_bridge_0_m0_address                        (mm_bridge_0_m0_address),                  //                          mm_bridge_0_m0.address
+		.mm_bridge_0_m0_waitrequest                    (mm_bridge_0_m0_waitrequest),              //                                        .waitrequest
+		.mm_bridge_0_m0_burstcount                     (mm_bridge_0_m0_burstcount),               //                                        .burstcount
+		.mm_bridge_0_m0_byteenable                     (mm_bridge_0_m0_byteenable),               //                                        .byteenable
+		.mm_bridge_0_m0_read                           (mm_bridge_0_m0_read),                     //                                        .read
+		.mm_bridge_0_m0_readdata                       (mm_bridge_0_m0_readdata),                 //                                        .readdata
+		.mm_bridge_0_m0_readdatavalid                  (mm_bridge_0_m0_readdatavalid),            //                                        .readdatavalid
+		.mm_bridge_0_m0_write                          (mm_bridge_0_m0_write),                    //                                        .write
+		.mm_bridge_0_m0_writedata                      (mm_bridge_0_m0_writedata),                //                                        .writedata
+		.mm_bridge_0_m0_debugaccess                    (mm_bridge_0_m0_debugaccess),              //                                        .debugaccess
+		.pio_0_s1_address                              (mm_interconnect_1_pio_0_s1_address),      //                                pio_0_s1.address
+		.pio_0_s1_write                                (mm_interconnect_1_pio_0_s1_write),        //                                        .write
+		.pio_0_s1_readdata                             (mm_interconnect_1_pio_0_s1_readdata),     //                                        .readdata
+		.pio_0_s1_writedata                            (mm_interconnect_1_pio_0_s1_writedata),    //                                        .writedata
+		.pio_0_s1_chipselect                           (mm_interconnect_1_pio_0_s1_chipselect),   //                                        .chipselect
+		.switchPIO_s1_address                          (mm_interconnect_1_switchpio_s1_address),  //                            switchPIO_s1.address
+		.switchPIO_s1_readdata                         (mm_interconnect_1_switchpio_s1_readdata)  //                                        .readdata
 	);
 
 	altera_reset_controller #(

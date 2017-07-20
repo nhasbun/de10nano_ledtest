@@ -10,15 +10,15 @@ Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 17.0]
 Progress: Parameterizing module mm_bridge_0
 Progress: Adding pio_0 [altera_avalon_pio 17.0]
 Progress: Parameterizing module pio_0
-Progress: Adding pio_1 [altera_avalon_pio 17.0]
-Progress: Parameterizing module pio_1
+Progress: Adding switchPIO [altera_avalon_pio 17.0]
+Progress: Parameterizing module switchPIO
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: ledtest.hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: ledtest.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
-Info: ledtest.pio_1: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ledtest.switchPIO: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
@@ -34,35 +34,41 @@ Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 17.0]
 Progress: Parameterizing module mm_bridge_0
 Progress: Adding pio_0 [altera_avalon_pio 17.0]
 Progress: Parameterizing module pio_0
-Progress: Adding pio_1 [altera_avalon_pio 17.0]
-Progress: Parameterizing module pio_1
+Progress: Adding switchPIO [altera_avalon_pio 17.0]
+Progress: Parameterizing module switchPIO
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: ledtest.hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: ledtest.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
-Info: ledtest.pio_1: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ledtest.switchPIO: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: ledtest: Generating ledtest "ledtest" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave mm_bridge_0.s0 because the master is of type axi and the slave is of type avalon.
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: hps_0: "ledtest" instantiated altera_hps "hps_0"
 Info: mm_bridge_0: "ledtest" instantiated altera_avalon_mm_bridge "mm_bridge_0"
 Info: pio_0: Starting RTL generation for module 'ledtest_pio_0'
-Info: pio_0:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_pio_0 --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7359_9175345833898759543.dir/0002_pio_0_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7359_9175345833898759543.dir/0002_pio_0_gen//ledtest_pio_0_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_0:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_pio_0 --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7360_4444297820278663528.dir/0002_pio_0_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7360_4444297820278663528.dir/0002_pio_0_gen//ledtest_pio_0_component_configuration.pl  --do_build_sim=0  ]
 Info: pio_0: Done RTL generation for module 'ledtest_pio_0'
 Info: pio_0: "ledtest" instantiated altera_avalon_pio "pio_0"
-Info: pio_1: Starting RTL generation for module 'ledtest_pio_1'
-Info: pio_1:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_pio_1 --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7359_9175345833898759543.dir/0003_pio_1_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7359_9175345833898759543.dir/0003_pio_1_gen//ledtest_pio_1_component_configuration.pl  --do_build_sim=0  ]
-Info: pio_1: Done RTL generation for module 'ledtest_pio_1'
-Info: pio_1: "ledtest" instantiated altera_avalon_pio "pio_1"
+Info: switchPIO: Starting RTL generation for module 'ledtest_switchPIO'
+Info: switchPIO:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_switchPIO --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7360_4444297820278663528.dir/0003_switchPIO_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7360_4444297820278663528.dir/0003_switchPIO_gen//ledtest_switchPIO_component_configuration.pl  --do_build_sim=0  ]
+Info: switchPIO: Done RTL generation for module 'ledtest_switchPIO'
+Info: switchPIO: "ledtest" instantiated altera_avalon_pio "switchPIO"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "ledtest" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "ledtest" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: irq_mapper: "ledtest" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "ledtest" instantiated altera_irq_mapper "irq_mapper_001"
 Info: rst_controller: "ledtest" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
@@ -95,6 +101,6 @@ Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_m
 Info: Reusing file D:/ownCloud/Ecografo/FPGA/pruebas/de10nano/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: ledtest: Done "ledtest" with 33 modules, 90 files
+Info: ledtest: Done "ledtest" with 35 modules, 92 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis
