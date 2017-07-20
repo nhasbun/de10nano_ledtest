@@ -5,3 +5,6 @@ quartus/hps_isw_handoff/
 *.o
 C/ledtest
 *.qws
+C/.cproject
+C/.project
+C/.settings/org.eclipse.cdt.core.prefs
