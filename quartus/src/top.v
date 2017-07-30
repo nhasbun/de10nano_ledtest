@@ -1,9 +1,13 @@
-module top(
-  input clock,
-  
-  input switch,
-  output reg led,
+module top
+(
+  // CLOCKS
+  input CLOCK50,
 
+  // SWITCH Y LEDS
+  input  [3:0]SWITCH_ARRAY_IO,
+  output [7:0]LED_ARRAY_IO,
+
+  // QSYS BULLSHIT
   output wire        hps_io_hps_io_emac1_inst_TX_CLK,  // hps_io.hps_io_emac1_inst_TX_CLK
   output wire        hps_io_hps_io_emac1_inst_TXD0,    // .hps_io_emac1_inst_TXD0
   output wire        hps_io_hps_io_emac1_inst_TXD1,    // .hps_io_emac1_inst_TXD1
@@ -34,50 +38,46 @@ module top(
   output wire        memory_mem_odt,                   // .mem_odt
   output wire [3:0]  memory_mem_dm,                    // .mem_dm
   input  wire        memory_oct_rzqin  
-  );
-
-initial led = 0;
-wire led_hps, clk_clk;
-
-assign clk_clk = clock;
-assign led_hps = pio_0_external_connection_export;
-
-ledtest inst_ledtest(
-  .clk_clk                          (clk_clk),
-  .hps_io_hps_io_emac1_inst_TX_CLK  (hps_io_hps_io_emac1_inst_TX_CLK),
-  .hps_io_hps_io_emac1_inst_TXD0    (hps_io_hps_io_emac1_inst_TXD0),
-  .hps_io_hps_io_emac1_inst_TXD1    (hps_io_hps_io_emac1_inst_TXD1),
-  .hps_io_hps_io_emac1_inst_TXD2    (hps_io_hps_io_emac1_inst_TXD2),
-  .hps_io_hps_io_emac1_inst_TXD3    (hps_io_hps_io_emac1_inst_TXD3),
-  .hps_io_hps_io_emac1_inst_RXD0    (hps_io_hps_io_emac1_inst_RXD0),
-  .hps_io_hps_io_emac1_inst_MDIO    (hps_io_hps_io_emac1_inst_MDIO),
-  .hps_io_hps_io_emac1_inst_MDC     (hps_io_hps_io_emac1_inst_MDC),
-  .hps_io_hps_io_emac1_inst_RX_CTL  (hps_io_hps_io_emac1_inst_RX_CTL),
-  .hps_io_hps_io_emac1_inst_TX_CTL  (hps_io_hps_io_emac1_inst_TX_CTL),
-  .hps_io_hps_io_emac1_inst_RX_CLK  (hps_io_hps_io_emac1_inst_RX_CLK),
-  .hps_io_hps_io_emac1_inst_RXD1    (hps_io_hps_io_emac1_inst_RXD1),
-  .hps_io_hps_io_emac1_inst_RXD2    (hps_io_hps_io_emac1_inst_RXD2),
-  .hps_io_hps_io_emac1_inst_RXD3    (hps_io_hps_io_emac1_inst_RXD3),
-  .memory_mem_a                     (memory_mem_a),
-  .memory_mem_ba                    (memory_mem_ba),
-  .memory_mem_ck                    (memory_mem_ck),
-  .memory_mem_ck_n                  (memory_mem_ck_n),
-  .memory_mem_cke                   (memory_mem_cke),
-  .memory_mem_cs_n                  (memory_mem_cs_n),
-  .memory_mem_ras_n                 (memory_mem_ras_n),
-  .memory_mem_cas_n                 (memory_mem_cas_n),
-  .memory_mem_we_n                  (memory_mem_we_n),
-  .memory_mem_reset_n               (memory_mem_reset_n),
-  .memory_mem_dq                    (memory_mem_dq),
-  .memory_mem_dqs                   (memory_mem_dqs),
-  .memory_mem_dqs_n                 (memory_mem_dqs_n),
-  .memory_mem_odt                   (memory_mem_odt),
-  .memory_mem_dm                    (memory_mem_dm),
-  .memory_oct_rzqin                 (memory_oct_rzqin),
-  .pio_0_external_connection_export (pio_0_external_connection_export),
-  .switch_export                    (switch)  
 );
 
-always @(posedge clock) led <= led_hps;
+ledtest inst_ledtest
+(
+  // QSYS BS
+  .hps_io_hps_io_emac1_inst_TX_CLK (hps_io_hps_io_emac1_inst_TX_CLK),
+  .hps_io_hps_io_emac1_inst_TXD0   (hps_io_hps_io_emac1_inst_TXD0),
+  .hps_io_hps_io_emac1_inst_TXD1   (hps_io_hps_io_emac1_inst_TXD1),
+  .hps_io_hps_io_emac1_inst_TXD2   (hps_io_hps_io_emac1_inst_TXD2),
+  .hps_io_hps_io_emac1_inst_TXD3   (hps_io_hps_io_emac1_inst_TXD3),
+  .hps_io_hps_io_emac1_inst_RXD0   (hps_io_hps_io_emac1_inst_RXD0),
+  .hps_io_hps_io_emac1_inst_MDIO   (hps_io_hps_io_emac1_inst_MDIO),
+  .hps_io_hps_io_emac1_inst_MDC    (hps_io_hps_io_emac1_inst_MDC),
+  .hps_io_hps_io_emac1_inst_RX_CTL (hps_io_hps_io_emac1_inst_RX_CTL),
+  .hps_io_hps_io_emac1_inst_TX_CTL (hps_io_hps_io_emac1_inst_TX_CTL),
+  .hps_io_hps_io_emac1_inst_RX_CLK (hps_io_hps_io_emac1_inst_RX_CLK),
+  .hps_io_hps_io_emac1_inst_RXD1   (hps_io_hps_io_emac1_inst_RXD1),
+  .hps_io_hps_io_emac1_inst_RXD2   (hps_io_hps_io_emac1_inst_RXD2),
+  .hps_io_hps_io_emac1_inst_RXD3   (hps_io_hps_io_emac1_inst_RXD3),
+  .memory_mem_a                    (memory_mem_a),
+  .memory_mem_ba                   (memory_mem_ba),
+  .memory_mem_ck                   (memory_mem_ck),
+  .memory_mem_ck_n                 (memory_mem_ck_n),
+  .memory_mem_cke                  (memory_mem_cke),
+  .memory_mem_cs_n                 (memory_mem_cs_n),
+  .memory_mem_ras_n                (memory_mem_ras_n),
+  .memory_mem_cas_n                (memory_mem_cas_n),
+  .memory_mem_we_n                 (memory_mem_we_n),
+  .memory_mem_reset_n              (memory_mem_reset_n),
+  .memory_mem_dq                   (memory_mem_dq),
+  .memory_mem_dqs                  (memory_mem_dqs),
+  .memory_mem_dqs_n                (memory_mem_dqs_n),
+  .memory_mem_odt                  (memory_mem_odt),
+  .memory_mem_dm                   (memory_mem_dm),
+  .memory_oct_rzqin                (memory_oct_rzqin),
+
+  // USEFUL SHIT
+  .clk_clk                         (CLOCK50),
+  .led_array_io_export             (LED_ARRAY_IO),
+  .switch_array_io_export          (SWITCH_ARRAY_IO)
+);
 
 endmodule
