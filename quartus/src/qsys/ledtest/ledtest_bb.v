@@ -31,8 +31,8 @@ module ledtest (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	pio_0_external_connection_export,
-	switch_export);	
+	led_array_io_export,
+	switch_array_io_export);	
 
 	input		clk_clk;
 	output		hps_io_hps_io_emac1_inst_TX_CLK;
@@ -65,6 +65,6 @@ module ledtest (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	output		pio_0_external_connection_export;
-	input		switch_export;
+	output	[7:0]	led_array_io_export;
+	input	[3:0]	switch_array_io_export;
 endmodule

@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2017.07.18.19:51:31</td>
+    <td class="l">2017.07.29.21:16:52</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -77,7 +77,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <div style="display:inline-block ; text-align:left">
     <table class="connectionboxes">
      <tr>
-      <td class="lefthandwire">&#160;&#160;clk_0&#160;</td>
+      <td class="lefthandwire">&#160;&#160;CLOCK&#160;</td>
       <td class="main" rowspan="2">ledtest</td>
      </tr>
      <tr style="height:6px">
@@ -88,13 +88,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <div style="display:inline-block ; text-align:left"><span>
      <br/>All Components
      <br/>&#160;&#160;
-     <a href="#module_mm_bridge_0"><b>mm_bridge_0</b>
-     </a> altera_avalon_mm_bridge 17.0
-     <br/>&#160;&#160;
-     <a href="#module_pio_0"><b>pio_0</b>
+     <a href="#module_LED_ARRAY"><b>LED_ARRAY</b>
      </a> altera_avalon_pio 17.0
      <br/>&#160;&#160;
-     <a href="#module_switchPIO"><b>switchPIO</b>
+     <a href="#module_MM_BRIDGE"><b>MM_BRIDGE</b>
+     </a> altera_avalon_mm_bridge 17.0
+     <br/>&#160;&#160;
+     <a href="#module_SWITCH_ARRAY"><b>SWITCH_ARRAY</b>
      </a> altera_avalon_pio 17.0</span>
    </div>
   </div>
@@ -104,19 +104,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="empty" rowspan="2"></td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_hps_0"><b>hps_0</b>
+     <a href="#module_ARM_MCU"><b>ARM_MCU</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_hps_0_bridges"><b>hps_0_bridges</b>
+     <a href="#module_ARM_MCU_bridges"><b>ARM_MCU_bridges</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_hps_0_arm_a9_0"><b>hps_0_arm_a9_0</b>
+     <a href="#module_ARM_MCU_arm_a9_0"><b>ARM_MCU_arm_a9_0</b>
      </a>
     </td>
     <td class="mastermodule" colspan="1">
-     <a href="#module_hps_0_arm_a9_1"><b>hps_0_arm_a9_1</b>
+     <a href="#module_ARM_MCU_arm_a9_1"><b>ARM_MCU_arm_a9_1</b>
      </a>
     </td>
    </tr>
@@ -128,7 +128,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_bridges"><b>hps_0_bridges</b>
+     <a href="#module_ARM_MCU_bridges"><b>ARM_MCU_bridges</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -145,7 +145,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_arm_gic_0"><b>hps_0_arm_gic_0</b>
+     <a href="#module_ARM_MCU_arm_gic_0"><b>ARM_MCU_arm_gic_0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -169,7 +169,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_L2"><b>hps_0_L2</b>
+     <a href="#module_ARM_MCU_L2"><b>ARM_MCU_L2</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -186,7 +186,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_dma"><b>hps_0_dma</b>
+     <a href="#module_ARM_MCU_dma"><b>ARM_MCU_dma</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -203,7 +203,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_sysmgr"><b>hps_0_sysmgr</b>
+     <a href="#module_ARM_MCU_sysmgr"><b>ARM_MCU_sysmgr</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -220,7 +220,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_clkmgr"><b>hps_0_clkmgr</b>
+     <a href="#module_ARM_MCU_clkmgr"><b>ARM_MCU_clkmgr</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -237,7 +237,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_rstmgr"><b>hps_0_rstmgr</b>
+     <a href="#module_ARM_MCU_rstmgr"><b>ARM_MCU_rstmgr</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -254,7 +254,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_fpgamgr"><b>hps_0_fpgamgr</b>
+     <a href="#module_ARM_MCU_fpgamgr"><b>ARM_MCU_fpgamgr</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -278,7 +278,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_uart0"><b>hps_0_uart0</b>
+     <a href="#module_ARM_MCU_uart0"><b>ARM_MCU_uart0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -295,7 +295,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_uart1"><b>hps_0_uart1</b>
+     <a href="#module_ARM_MCU_uart1"><b>ARM_MCU_uart1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -312,7 +312,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_timer0"><b>hps_0_timer0</b>
+     <a href="#module_ARM_MCU_timer0"><b>ARM_MCU_timer0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -329,7 +329,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_timer1"><b>hps_0_timer1</b>
+     <a href="#module_ARM_MCU_timer1"><b>ARM_MCU_timer1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -346,7 +346,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_timer2"><b>hps_0_timer2</b>
+     <a href="#module_ARM_MCU_timer2"><b>ARM_MCU_timer2</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -363,7 +363,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_timer3"><b>hps_0_timer3</b>
+     <a href="#module_ARM_MCU_timer3"><b>ARM_MCU_timer3</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -380,7 +380,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_wd_timer0"><b>hps_0_wd_timer0</b>
+     <a href="#module_ARM_MCU_wd_timer0"><b>ARM_MCU_wd_timer0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -397,7 +397,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_wd_timer1"><b>hps_0_wd_timer1</b>
+     <a href="#module_ARM_MCU_wd_timer1"><b>ARM_MCU_wd_timer1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -414,7 +414,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_gpio0"><b>hps_0_gpio0</b>
+     <a href="#module_ARM_MCU_gpio0"><b>ARM_MCU_gpio0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -431,7 +431,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_gpio1"><b>hps_0_gpio1</b>
+     <a href="#module_ARM_MCU_gpio1"><b>ARM_MCU_gpio1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -448,7 +448,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_gpio2"><b>hps_0_gpio2</b>
+     <a href="#module_ARM_MCU_gpio2"><b>ARM_MCU_gpio2</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -465,7 +465,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_i2c0"><b>hps_0_i2c0</b>
+     <a href="#module_ARM_MCU_i2c0"><b>ARM_MCU_i2c0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -482,7 +482,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_i2c1"><b>hps_0_i2c1</b>
+     <a href="#module_ARM_MCU_i2c1"><b>ARM_MCU_i2c1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -499,7 +499,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_i2c2"><b>hps_0_i2c2</b>
+     <a href="#module_ARM_MCU_i2c2"><b>ARM_MCU_i2c2</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -516,7 +516,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_i2c3"><b>hps_0_i2c3</b>
+     <a href="#module_ARM_MCU_i2c3"><b>ARM_MCU_i2c3</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -533,7 +533,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_nand0"><b>hps_0_nand0</b>
+     <a href="#module_ARM_MCU_nand0"><b>ARM_MCU_nand0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -557,7 +557,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_spim0"><b>hps_0_spim0</b>
+     <a href="#module_ARM_MCU_spim0"><b>ARM_MCU_spim0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -574,7 +574,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_spim1"><b>hps_0_spim1</b>
+     <a href="#module_ARM_MCU_spim1"><b>ARM_MCU_spim1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -591,7 +591,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_qspi"><b>hps_0_qspi</b>
+     <a href="#module_ARM_MCU_qspi"><b>ARM_MCU_qspi</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -615,7 +615,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_sdmmc"><b>hps_0_sdmmc</b>
+     <a href="#module_ARM_MCU_sdmmc"><b>ARM_MCU_sdmmc</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -632,7 +632,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_usb0"><b>hps_0_usb0</b>
+     <a href="#module_ARM_MCU_usb0"><b>ARM_MCU_usb0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -649,7 +649,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_usb1"><b>hps_0_usb1</b>
+     <a href="#module_ARM_MCU_usb1"><b>ARM_MCU_usb1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -666,7 +666,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_gmac0"><b>hps_0_gmac0</b>
+     <a href="#module_ARM_MCU_gmac0"><b>ARM_MCU_gmac0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -683,7 +683,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_gmac1"><b>hps_0_gmac1</b>
+     <a href="#module_ARM_MCU_gmac1"><b>ARM_MCU_gmac1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -700,7 +700,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_dcan0"><b>hps_0_dcan0</b>
+     <a href="#module_ARM_MCU_dcan0"><b>ARM_MCU_dcan0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -717,7 +717,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_dcan1"><b>hps_0_dcan1</b>
+     <a href="#module_ARM_MCU_dcan1"><b>ARM_MCU_dcan1</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -734,7 +734,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_l3regs"><b>hps_0_l3regs</b>
+     <a href="#module_ARM_MCU_l3regs"><b>ARM_MCU_l3regs</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -751,7 +751,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_sdrctl"><b>hps_0_sdrctl</b>
+     <a href="#module_ARM_MCU_sdrctl"><b>ARM_MCU_sdrctl</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -768,7 +768,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_axi_ocram"><b>hps_0_axi_ocram</b>
+     <a href="#module_ARM_MCU_axi_ocram"><b>ARM_MCU_axi_ocram</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -785,7 +785,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_axi_sdram"><b>hps_0_axi_sdram</b>
+     <a href="#module_ARM_MCU_axi_sdram"><b>ARM_MCU_axi_sdram</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -802,7 +802,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_timer"><b>hps_0_timer</b>
+     <a href="#module_ARM_MCU_timer"><b>ARM_MCU_timer</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -819,7 +819,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_hps_0_scu"><b>hps_0_scu</b>
+     <a href="#module_ARM_MCU_scu"><b>ARM_MCU_scu</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -836,7 +836,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_pio_0"><b>pio_0</b>
+     <a href="#module_LED_ARRAY"><b>LED_ARRAY</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -853,7 +853,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_switchPIO"><b>switchPIO</b>
+     <a href="#module_SWITCH_ARRAY"><b>SWITCH_ARRAY</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -869,162 +869,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="addr"><span style="color:#989898">0x</span>ff200010</td>
    </tr>
   </table>
-  <a name="module_clk_0"> </a>
+  <a name="module_ARM_MCU"> </a>
   <div>
    <hr/>
-   <h2>clk_0</h2>clock_source v17.0
-   <br/>
-   <div class="greydiv">
-    <table class="connectionboxes">
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_bridges">hps_0_bridges</a>
-      </td>
-      <td class="from">h2f_reset&#160;&#160;</td>
-      <td class="main" rowspan="19">clk_0</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;clk_in_reset</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk&#160;&#160;</td>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_pio_0">pio_0</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;clk</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk_reset&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk&#160;&#160;</td>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_mm_bridge_0">mm_bridge_0</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;clk</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk_reset&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk&#160;&#160;</td>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_switchPIO">switchPIO</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;clk</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk_reset&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">clk&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_bridges">hps_0_bridges</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;h2f_lw_axi_clock</td>
-     </tr>
-    </table>
-   </div>
-   <br/>
-   <br/>
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Parameters</h2>
-      <table>
-       <tr>
-        <td class="parametername">clockFrequency</td>
-        <td class="parametervalue">50000000</td>
-       </tr>
-       <tr>
-        <td class="parametername">clockFrequencyKnown</td>
-        <td class="parametervalue">true</td>
-       </tr>
-       <tr>
-        <td class="parametername">inputClockFrequency</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">resetSynchronousEdges</td>
-        <td class="parametervalue">NONE</td>
-       </tr>
-       <tr>
-        <td class="parametername">deviceFamily</td>
-        <td class="parametervalue">UNKNOWN</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateLegacySim</td>
-        <td class="parametervalue">false</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>&#160;&#160;
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Software Assignments</h2>(none)</td>
-    </tr>
-   </table>
-  </div>
-  <a name="module_hps_0"> </a>
-  <div>
-   <hr/>
-   <h2>hps_0</h2>altera_hps v17.0
+   <h2>ARM_MCU</h2>altera_hps v17.0
    <br/>
    <br/>
    <br/>
@@ -8340,10 +8188,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_fpga_interfaces"> </a>
+  <a name="module_ARM_MCU_fpga_interfaces"> </a>
   <div>
    <hr/>
-   <h2>hps_0_fpga_interfaces</h2>altera_interface_generator v17.0
+   <h2>ARM_MCU_fpga_interfaces</h2>altera_interface_generator v17.0
    <br/>
    <br/>
    <br/>
@@ -14199,10 +14047,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_hps_io"> </a>
+  <a name="module_ARM_MCU_hps_io"> </a>
   <div>
    <hr/>
-   <h2>hps_0_hps_io</h2>altera_hps_io v17.0
+   <h2>ARM_MCU_hps_io</h2>altera_hps_io v17.0
    <br/>
    <br/>
    <br/>
@@ -20054,10 +19902,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_clk_0"> </a>
+  <a name="module_ARM_MCU_clk_0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_clk_0</h2>hps_clk_src v17.0
+   <h2>ARM_MCU_clk_0</h2>hps_clk_src v17.0
    <br/>
    <br/>
    <br/>
@@ -20085,19 +19933,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_bridges"> </a>
+  <a name="module_ARM_MCU_bridges"> </a>
   <div>
    <hr/>
-   <h2>hps_0_bridges</h2>hps_bridge_avalon v17.0
+   <h2>ARM_MCU_bridges</h2>hps_bridge_avalon v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="18">hps_0_bridges</td>
+      <td class="main" rowspan="18">ARM_MCU_bridges</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -20113,7 +19961,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -20125,7 +19973,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -20137,7 +19985,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_clk_0">clk_0</a>
+       <a href="#module_CLOCK">CLOCK</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -20149,7 +19997,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">h2f_lw&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mm_bridge_0">mm_bridge_0</a>
+       <a href="#module_MM_BRIDGE">MM_BRIDGE</a>
       </td>
      </tr>
      <tr>
@@ -20165,7 +20013,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">h2f_reset&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_clk_0">clk_0</a>
+       <a href="#module_CLOCK">CLOCK</a>
       </td>
      </tr>
      <tr>
@@ -20257,10 +20105,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_eosc1"> </a>
+  <a name="module_ARM_MCU_eosc1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_eosc1</h2>hps_virt_clk v17.0
+   <h2>ARM_MCU_eosc1</h2>hps_virt_clk v17.0
    <br/>
    <br/>
    <br/>
@@ -20292,10 +20140,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_eosc2"> </a>
+  <a name="module_ARM_MCU_eosc2"> </a>
   <div>
    <hr/>
-   <h2>hps_0_eosc2</h2>hps_virt_clk v17.0
+   <h2>ARM_MCU_eosc2</h2>hps_virt_clk v17.0
    <br/>
    <br/>
    <br/>
@@ -20327,10 +20175,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_f2s_periph_ref_clk"> </a>
+  <a name="module_ARM_MCU_f2s_periph_ref_clk"> </a>
   <div>
    <hr/>
-   <h2>hps_0_f2s_periph_ref_clk</h2>hps_virt_clk v17.0
+   <h2>ARM_MCU_f2s_periph_ref_clk</h2>hps_virt_clk v17.0
    <br/>
    <br/>
    <br/>
@@ -20362,10 +20210,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_f2s_sdram_ref_clk"> </a>
+  <a name="module_ARM_MCU_f2s_sdram_ref_clk"> </a>
   <div>
    <hr/>
-   <h2>hps_0_f2s_sdram_ref_clk</h2>hps_virt_clk v17.0
+   <h2>ARM_MCU_f2s_sdram_ref_clk</h2>hps_virt_clk v17.0
    <br/>
    <br/>
    <br/>
@@ -20397,19 +20245,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_arm_a9_0"> </a>
+  <a name="module_ARM_MCU_arm_a9_0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_arm_a9_0</h2>arm_a9 v17.0
+   <h2>ARM_MCU_arm_a9_0</h2>arm_a9 v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="131">hps_0_arm_a9_0</td>
+      <td class="main" rowspan="131">ARM_MCU_arm_a9_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -20425,7 +20273,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_bridges">hps_0_bridges</a>
+       <a href="#module_ARM_MCU_bridges">ARM_MCU_bridges</a>
       </td>
      </tr>
      <tr>
@@ -20441,7 +20289,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
      </tr>
      <tr>
@@ -20467,7 +20315,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_L2">hps_0_L2</a>
+       <a href="#module_ARM_MCU_L2">ARM_MCU_L2</a>
       </td>
      </tr>
      <tr>
@@ -20483,7 +20331,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dma">hps_0_dma</a>
+       <a href="#module_ARM_MCU_dma">ARM_MCU_dma</a>
       </td>
      </tr>
      <tr>
@@ -20499,7 +20347,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sysmgr">hps_0_sysmgr</a>
+       <a href="#module_ARM_MCU_sysmgr">ARM_MCU_sysmgr</a>
       </td>
      </tr>
      <tr>
@@ -20515,7 +20363,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
      </tr>
      <tr>
@@ -20531,7 +20379,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_rstmgr">hps_0_rstmgr</a>
+       <a href="#module_ARM_MCU_rstmgr">ARM_MCU_rstmgr</a>
       </td>
      </tr>
      <tr>
@@ -20547,7 +20395,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_fpgamgr">hps_0_fpgamgr</a>
+       <a href="#module_ARM_MCU_fpgamgr">ARM_MCU_fpgamgr</a>
       </td>
      </tr>
      <tr>
@@ -20573,7 +20421,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart0">hps_0_uart0</a>
+       <a href="#module_ARM_MCU_uart0">ARM_MCU_uart0</a>
       </td>
      </tr>
      <tr>
@@ -20589,7 +20437,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart1">hps_0_uart1</a>
+       <a href="#module_ARM_MCU_uart1">ARM_MCU_uart1</a>
       </td>
      </tr>
      <tr>
@@ -20605,7 +20453,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer0">hps_0_timer0</a>
+       <a href="#module_ARM_MCU_timer0">ARM_MCU_timer0</a>
       </td>
      </tr>
      <tr>
@@ -20621,7 +20469,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer1">hps_0_timer1</a>
+       <a href="#module_ARM_MCU_timer1">ARM_MCU_timer1</a>
       </td>
      </tr>
      <tr>
@@ -20637,7 +20485,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer2">hps_0_timer2</a>
+       <a href="#module_ARM_MCU_timer2">ARM_MCU_timer2</a>
       </td>
      </tr>
      <tr>
@@ -20653,7 +20501,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer3">hps_0_timer3</a>
+       <a href="#module_ARM_MCU_timer3">ARM_MCU_timer3</a>
       </td>
      </tr>
      <tr>
@@ -20669,7 +20517,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer0">hps_0_wd_timer0</a>
+       <a href="#module_ARM_MCU_wd_timer0">ARM_MCU_wd_timer0</a>
       </td>
      </tr>
      <tr>
@@ -20685,7 +20533,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer1">hps_0_wd_timer1</a>
+       <a href="#module_ARM_MCU_wd_timer1">ARM_MCU_wd_timer1</a>
       </td>
      </tr>
      <tr>
@@ -20701,7 +20549,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio0">hps_0_gpio0</a>
+       <a href="#module_ARM_MCU_gpio0">ARM_MCU_gpio0</a>
       </td>
      </tr>
      <tr>
@@ -20717,7 +20565,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio1">hps_0_gpio1</a>
+       <a href="#module_ARM_MCU_gpio1">ARM_MCU_gpio1</a>
       </td>
      </tr>
      <tr>
@@ -20733,7 +20581,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio2">hps_0_gpio2</a>
+       <a href="#module_ARM_MCU_gpio2">ARM_MCU_gpio2</a>
       </td>
      </tr>
      <tr>
@@ -20749,7 +20597,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c0">hps_0_i2c0</a>
+       <a href="#module_ARM_MCU_i2c0">ARM_MCU_i2c0</a>
       </td>
      </tr>
      <tr>
@@ -20765,7 +20613,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c1">hps_0_i2c1</a>
+       <a href="#module_ARM_MCU_i2c1">ARM_MCU_i2c1</a>
       </td>
      </tr>
      <tr>
@@ -20781,7 +20629,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c2">hps_0_i2c2</a>
+       <a href="#module_ARM_MCU_i2c2">ARM_MCU_i2c2</a>
       </td>
      </tr>
      <tr>
@@ -20797,7 +20645,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c3">hps_0_i2c3</a>
+       <a href="#module_ARM_MCU_i2c3">ARM_MCU_i2c3</a>
       </td>
      </tr>
      <tr>
@@ -20813,7 +20661,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_nand0">hps_0_nand0</a>
+       <a href="#module_ARM_MCU_nand0">ARM_MCU_nand0</a>
       </td>
      </tr>
      <tr>
@@ -20839,7 +20687,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim0">hps_0_spim0</a>
+       <a href="#module_ARM_MCU_spim0">ARM_MCU_spim0</a>
       </td>
      </tr>
      <tr>
@@ -20855,7 +20703,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim1">hps_0_spim1</a>
+       <a href="#module_ARM_MCU_spim1">ARM_MCU_spim1</a>
       </td>
      </tr>
      <tr>
@@ -20871,7 +20719,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_qspi">hps_0_qspi</a>
+       <a href="#module_ARM_MCU_qspi">ARM_MCU_qspi</a>
       </td>
      </tr>
      <tr>
@@ -20897,7 +20745,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sdmmc">hps_0_sdmmc</a>
+       <a href="#module_ARM_MCU_sdmmc">ARM_MCU_sdmmc</a>
       </td>
      </tr>
      <tr>
@@ -20913,7 +20761,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb0">hps_0_usb0</a>
+       <a href="#module_ARM_MCU_usb0">ARM_MCU_usb0</a>
       </td>
      </tr>
      <tr>
@@ -20929,7 +20777,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb1">hps_0_usb1</a>
+       <a href="#module_ARM_MCU_usb1">ARM_MCU_usb1</a>
       </td>
      </tr>
      <tr>
@@ -20945,7 +20793,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac0">hps_0_gmac0</a>
+       <a href="#module_ARM_MCU_gmac0">ARM_MCU_gmac0</a>
       </td>
      </tr>
      <tr>
@@ -20961,7 +20809,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac1">hps_0_gmac1</a>
+       <a href="#module_ARM_MCU_gmac1">ARM_MCU_gmac1</a>
       </td>
      </tr>
      <tr>
@@ -20977,7 +20825,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dcan0">hps_0_dcan0</a>
+       <a href="#module_ARM_MCU_dcan0">ARM_MCU_dcan0</a>
       </td>
      </tr>
      <tr>
@@ -20993,7 +20841,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dcan1">hps_0_dcan1</a>
+       <a href="#module_ARM_MCU_dcan1">ARM_MCU_dcan1</a>
       </td>
      </tr>
      <tr>
@@ -21009,7 +20857,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_l3regs">hps_0_l3regs</a>
+       <a href="#module_ARM_MCU_l3regs">ARM_MCU_l3regs</a>
       </td>
      </tr>
      <tr>
@@ -21025,7 +20873,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sdrctl">hps_0_sdrctl</a>
+       <a href="#module_ARM_MCU_sdrctl">ARM_MCU_sdrctl</a>
       </td>
      </tr>
      <tr>
@@ -21041,7 +20889,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_axi_ocram">hps_0_axi_ocram</a>
+       <a href="#module_ARM_MCU_axi_ocram">ARM_MCU_axi_ocram</a>
       </td>
      </tr>
      <tr>
@@ -21057,7 +20905,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_axi_sdram">hps_0_axi_sdram</a>
+       <a href="#module_ARM_MCU_axi_sdram">ARM_MCU_axi_sdram</a>
       </td>
      </tr>
      <tr>
@@ -21073,7 +20921,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer">hps_0_timer</a>
+       <a href="#module_ARM_MCU_timer">ARM_MCU_timer</a>
       </td>
      </tr>
      <tr>
@@ -21089,7 +20937,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_scu">hps_0_scu</a>
+       <a href="#module_ARM_MCU_scu">ARM_MCU_scu</a>
       </td>
      </tr>
      <tr>
@@ -21129,19 +20977,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_arm_a9_1"> </a>
+  <a name="module_ARM_MCU_arm_a9_1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_arm_a9_1</h2>arm_a9 v17.0
+   <h2>ARM_MCU_arm_a9_1</h2>arm_a9 v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="131">hps_0_arm_a9_1</td>
+      <td class="main" rowspan="131">ARM_MCU_arm_a9_1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -21157,7 +21005,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_bridges">hps_0_bridges</a>
+       <a href="#module_ARM_MCU_bridges">ARM_MCU_bridges</a>
       </td>
      </tr>
      <tr>
@@ -21173,7 +21021,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
      </tr>
      <tr>
@@ -21199,7 +21047,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_L2">hps_0_L2</a>
+       <a href="#module_ARM_MCU_L2">ARM_MCU_L2</a>
       </td>
      </tr>
      <tr>
@@ -21215,7 +21063,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dma">hps_0_dma</a>
+       <a href="#module_ARM_MCU_dma">ARM_MCU_dma</a>
       </td>
      </tr>
      <tr>
@@ -21231,7 +21079,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sysmgr">hps_0_sysmgr</a>
+       <a href="#module_ARM_MCU_sysmgr">ARM_MCU_sysmgr</a>
       </td>
      </tr>
      <tr>
@@ -21247,7 +21095,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
      </tr>
      <tr>
@@ -21263,7 +21111,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_rstmgr">hps_0_rstmgr</a>
+       <a href="#module_ARM_MCU_rstmgr">ARM_MCU_rstmgr</a>
       </td>
      </tr>
      <tr>
@@ -21279,7 +21127,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_fpgamgr">hps_0_fpgamgr</a>
+       <a href="#module_ARM_MCU_fpgamgr">ARM_MCU_fpgamgr</a>
       </td>
      </tr>
      <tr>
@@ -21305,7 +21153,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart0">hps_0_uart0</a>
+       <a href="#module_ARM_MCU_uart0">ARM_MCU_uart0</a>
       </td>
      </tr>
      <tr>
@@ -21321,7 +21169,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart1">hps_0_uart1</a>
+       <a href="#module_ARM_MCU_uart1">ARM_MCU_uart1</a>
       </td>
      </tr>
      <tr>
@@ -21337,7 +21185,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer0">hps_0_timer0</a>
+       <a href="#module_ARM_MCU_timer0">ARM_MCU_timer0</a>
       </td>
      </tr>
      <tr>
@@ -21353,7 +21201,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer1">hps_0_timer1</a>
+       <a href="#module_ARM_MCU_timer1">ARM_MCU_timer1</a>
       </td>
      </tr>
      <tr>
@@ -21369,7 +21217,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer2">hps_0_timer2</a>
+       <a href="#module_ARM_MCU_timer2">ARM_MCU_timer2</a>
       </td>
      </tr>
      <tr>
@@ -21385,7 +21233,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer3">hps_0_timer3</a>
+       <a href="#module_ARM_MCU_timer3">ARM_MCU_timer3</a>
       </td>
      </tr>
      <tr>
@@ -21401,7 +21249,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer0">hps_0_wd_timer0</a>
+       <a href="#module_ARM_MCU_wd_timer0">ARM_MCU_wd_timer0</a>
       </td>
      </tr>
      <tr>
@@ -21417,7 +21265,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer1">hps_0_wd_timer1</a>
+       <a href="#module_ARM_MCU_wd_timer1">ARM_MCU_wd_timer1</a>
       </td>
      </tr>
      <tr>
@@ -21433,7 +21281,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio0">hps_0_gpio0</a>
+       <a href="#module_ARM_MCU_gpio0">ARM_MCU_gpio0</a>
       </td>
      </tr>
      <tr>
@@ -21449,7 +21297,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio1">hps_0_gpio1</a>
+       <a href="#module_ARM_MCU_gpio1">ARM_MCU_gpio1</a>
       </td>
      </tr>
      <tr>
@@ -21465,7 +21313,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio2">hps_0_gpio2</a>
+       <a href="#module_ARM_MCU_gpio2">ARM_MCU_gpio2</a>
       </td>
      </tr>
      <tr>
@@ -21481,7 +21329,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c0">hps_0_i2c0</a>
+       <a href="#module_ARM_MCU_i2c0">ARM_MCU_i2c0</a>
       </td>
      </tr>
      <tr>
@@ -21497,7 +21345,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c1">hps_0_i2c1</a>
+       <a href="#module_ARM_MCU_i2c1">ARM_MCU_i2c1</a>
       </td>
      </tr>
      <tr>
@@ -21513,7 +21361,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c2">hps_0_i2c2</a>
+       <a href="#module_ARM_MCU_i2c2">ARM_MCU_i2c2</a>
       </td>
      </tr>
      <tr>
@@ -21529,7 +21377,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c3">hps_0_i2c3</a>
+       <a href="#module_ARM_MCU_i2c3">ARM_MCU_i2c3</a>
       </td>
      </tr>
      <tr>
@@ -21545,7 +21393,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_nand0">hps_0_nand0</a>
+       <a href="#module_ARM_MCU_nand0">ARM_MCU_nand0</a>
       </td>
      </tr>
      <tr>
@@ -21571,7 +21419,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim0">hps_0_spim0</a>
+       <a href="#module_ARM_MCU_spim0">ARM_MCU_spim0</a>
       </td>
      </tr>
      <tr>
@@ -21587,7 +21435,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim1">hps_0_spim1</a>
+       <a href="#module_ARM_MCU_spim1">ARM_MCU_spim1</a>
       </td>
      </tr>
      <tr>
@@ -21603,7 +21451,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_qspi">hps_0_qspi</a>
+       <a href="#module_ARM_MCU_qspi">ARM_MCU_qspi</a>
       </td>
      </tr>
      <tr>
@@ -21629,7 +21477,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sdmmc">hps_0_sdmmc</a>
+       <a href="#module_ARM_MCU_sdmmc">ARM_MCU_sdmmc</a>
       </td>
      </tr>
      <tr>
@@ -21645,7 +21493,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb0">hps_0_usb0</a>
+       <a href="#module_ARM_MCU_usb0">ARM_MCU_usb0</a>
       </td>
      </tr>
      <tr>
@@ -21661,7 +21509,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb1">hps_0_usb1</a>
+       <a href="#module_ARM_MCU_usb1">ARM_MCU_usb1</a>
       </td>
      </tr>
      <tr>
@@ -21677,7 +21525,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac0">hps_0_gmac0</a>
+       <a href="#module_ARM_MCU_gmac0">ARM_MCU_gmac0</a>
       </td>
      </tr>
      <tr>
@@ -21693,7 +21541,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac1">hps_0_gmac1</a>
+       <a href="#module_ARM_MCU_gmac1">ARM_MCU_gmac1</a>
       </td>
      </tr>
      <tr>
@@ -21709,7 +21557,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dcan0">hps_0_dcan0</a>
+       <a href="#module_ARM_MCU_dcan0">ARM_MCU_dcan0</a>
       </td>
      </tr>
      <tr>
@@ -21725,7 +21573,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dcan1">hps_0_dcan1</a>
+       <a href="#module_ARM_MCU_dcan1">ARM_MCU_dcan1</a>
       </td>
      </tr>
      <tr>
@@ -21741,7 +21589,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_l3regs">hps_0_l3regs</a>
+       <a href="#module_ARM_MCU_l3regs">ARM_MCU_l3regs</a>
       </td>
      </tr>
      <tr>
@@ -21757,7 +21605,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sdrctl">hps_0_sdrctl</a>
+       <a href="#module_ARM_MCU_sdrctl">ARM_MCU_sdrctl</a>
       </td>
      </tr>
      <tr>
@@ -21773,7 +21621,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_axi_ocram">hps_0_axi_ocram</a>
+       <a href="#module_ARM_MCU_axi_ocram">ARM_MCU_axi_ocram</a>
       </td>
      </tr>
      <tr>
@@ -21789,7 +21637,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_axi_sdram">hps_0_axi_sdram</a>
+       <a href="#module_ARM_MCU_axi_sdram">ARM_MCU_axi_sdram</a>
       </td>
      </tr>
      <tr>
@@ -21805,7 +21653,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer">hps_0_timer</a>
+       <a href="#module_ARM_MCU_timer">ARM_MCU_timer</a>
       </td>
      </tr>
      <tr>
@@ -21821,7 +21669,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">altera_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_scu">hps_0_scu</a>
+       <a href="#module_ARM_MCU_scu">ARM_MCU_scu</a>
       </td>
      </tr>
      <tr>
@@ -21861,19 +21709,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_arm_gic_0"> </a>
+  <a name="module_ARM_MCU_arm_gic_0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_arm_gic_0</h2>arm_gic v17.0
+   <h2>ARM_MCU_arm_gic_0</h2>arm_gic v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="107">hps_0_arm_gic_0</td>
+      <td class="main" rowspan="107">ARM_MCU_arm_gic_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -21889,7 +21737,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -21907,7 +21755,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -21925,7 +21773,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_32&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_L2">hps_0_L2</a>
+       <a href="#module_ARM_MCU_L2">ARM_MCU_L2</a>
       </td>
      </tr>
      <tr>
@@ -21941,7 +21789,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dma">hps_0_dma</a>
+       <a href="#module_ARM_MCU_dma">ARM_MCU_dma</a>
       </td>
      </tr>
      <tr>
@@ -21957,7 +21805,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_fpgamgr">hps_0_fpgamgr</a>
+       <a href="#module_ARM_MCU_fpgamgr">ARM_MCU_fpgamgr</a>
       </td>
      </tr>
      <tr>
@@ -21973,7 +21821,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart0">hps_0_uart0</a>
+       <a href="#module_ARM_MCU_uart0">ARM_MCU_uart0</a>
       </td>
      </tr>
      <tr>
@@ -21989,7 +21837,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart1">hps_0_uart1</a>
+       <a href="#module_ARM_MCU_uart1">ARM_MCU_uart1</a>
       </td>
      </tr>
      <tr>
@@ -22005,7 +21853,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer0">hps_0_timer0</a>
+       <a href="#module_ARM_MCU_timer0">ARM_MCU_timer0</a>
       </td>
      </tr>
      <tr>
@@ -22021,7 +21869,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer1">hps_0_timer1</a>
+       <a href="#module_ARM_MCU_timer1">ARM_MCU_timer1</a>
       </td>
      </tr>
      <tr>
@@ -22037,7 +21885,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer2">hps_0_timer2</a>
+       <a href="#module_ARM_MCU_timer2">ARM_MCU_timer2</a>
       </td>
      </tr>
      <tr>
@@ -22053,7 +21901,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer3">hps_0_timer3</a>
+       <a href="#module_ARM_MCU_timer3">ARM_MCU_timer3</a>
       </td>
      </tr>
      <tr>
@@ -22069,7 +21917,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer0">hps_0_wd_timer0</a>
+       <a href="#module_ARM_MCU_wd_timer0">ARM_MCU_wd_timer0</a>
       </td>
      </tr>
      <tr>
@@ -22085,7 +21933,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer1">hps_0_wd_timer1</a>
+       <a href="#module_ARM_MCU_wd_timer1">ARM_MCU_wd_timer1</a>
       </td>
      </tr>
      <tr>
@@ -22101,7 +21949,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio0">hps_0_gpio0</a>
+       <a href="#module_ARM_MCU_gpio0">ARM_MCU_gpio0</a>
       </td>
      </tr>
      <tr>
@@ -22117,7 +21965,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio1">hps_0_gpio1</a>
+       <a href="#module_ARM_MCU_gpio1">ARM_MCU_gpio1</a>
       </td>
      </tr>
      <tr>
@@ -22133,7 +21981,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio2">hps_0_gpio2</a>
+       <a href="#module_ARM_MCU_gpio2">ARM_MCU_gpio2</a>
       </td>
      </tr>
      <tr>
@@ -22149,7 +21997,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c0">hps_0_i2c0</a>
+       <a href="#module_ARM_MCU_i2c0">ARM_MCU_i2c0</a>
       </td>
      </tr>
      <tr>
@@ -22165,7 +22013,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c1">hps_0_i2c1</a>
+       <a href="#module_ARM_MCU_i2c1">ARM_MCU_i2c1</a>
       </td>
      </tr>
      <tr>
@@ -22181,7 +22029,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c2">hps_0_i2c2</a>
+       <a href="#module_ARM_MCU_i2c2">ARM_MCU_i2c2</a>
       </td>
      </tr>
      <tr>
@@ -22197,7 +22045,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c3">hps_0_i2c3</a>
+       <a href="#module_ARM_MCU_i2c3">ARM_MCU_i2c3</a>
       </td>
      </tr>
      <tr>
@@ -22213,7 +22061,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_nand0">hps_0_nand0</a>
+       <a href="#module_ARM_MCU_nand0">ARM_MCU_nand0</a>
       </td>
      </tr>
      <tr>
@@ -22229,7 +22077,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim0">hps_0_spim0</a>
+       <a href="#module_ARM_MCU_spim0">ARM_MCU_spim0</a>
       </td>
      </tr>
      <tr>
@@ -22245,7 +22093,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim1">hps_0_spim1</a>
+       <a href="#module_ARM_MCU_spim1">ARM_MCU_spim1</a>
       </td>
      </tr>
      <tr>
@@ -22261,7 +22109,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_qspi">hps_0_qspi</a>
+       <a href="#module_ARM_MCU_qspi">ARM_MCU_qspi</a>
       </td>
      </tr>
      <tr>
@@ -22277,7 +22125,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_sdmmc">hps_0_sdmmc</a>
+       <a href="#module_ARM_MCU_sdmmc">ARM_MCU_sdmmc</a>
       </td>
      </tr>
      <tr>
@@ -22293,7 +22141,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb0">hps_0_usb0</a>
+       <a href="#module_ARM_MCU_usb0">ARM_MCU_usb0</a>
       </td>
      </tr>
      <tr>
@@ -22309,7 +22157,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb1">hps_0_usb1</a>
+       <a href="#module_ARM_MCU_usb1">ARM_MCU_usb1</a>
       </td>
      </tr>
      <tr>
@@ -22325,7 +22173,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac0">hps_0_gmac0</a>
+       <a href="#module_ARM_MCU_gmac0">ARM_MCU_gmac0</a>
       </td>
      </tr>
      <tr>
@@ -22341,7 +22189,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac1">hps_0_gmac1</a>
+       <a href="#module_ARM_MCU_gmac1">ARM_MCU_gmac1</a>
       </td>
      </tr>
      <tr>
@@ -22357,7 +22205,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_dcan0">hps_0_dcan0</a>
+       <a href="#module_ARM_MCU_dcan0">ARM_MCU_dcan0</a>
       </td>
      </tr>
      <tr>
@@ -22383,7 +22231,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_dcan1">hps_0_dcan1</a>
+       <a href="#module_ARM_MCU_dcan1">ARM_MCU_dcan1</a>
       </td>
      </tr>
      <tr>
@@ -22409,7 +22257,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">arm_gic_ppi&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer">hps_0_timer</a>
+       <a href="#module_ARM_MCU_timer">ARM_MCU_timer</a>
       </td>
      </tr>
      <tr>
@@ -22477,19 +22325,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_L2"> </a>
+  <a name="module_ARM_MCU_L2"> </a>
   <div>
    <hr/>
-   <h2>hps_0_L2</h2>arm_pl310_L2 v17.0
+   <h2>ARM_MCU_L2</h2>arm_pl310_L2 v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="13">hps_0_L2</td>
+      <td class="main" rowspan="13">ARM_MCU_L2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -22505,7 +22353,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22517,7 +22365,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22529,7 +22377,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_32&#160;&#160;</td>
      </tr>
@@ -22564,19 +22412,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_dma"> </a>
+  <a name="module_ARM_MCU_dma"> </a>
   <div>
    <hr/>
-   <h2>hps_0_dma</h2>arm_pl330_dma v17.0
+   <h2>ARM_MCU_dma</h2>arm_pl330_dma v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_dma</td>
+      <td class="main" rowspan="14">ARM_MCU_dma</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -22586,7 +22434,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_main_clk&#160;&#160;</td>
      </tr>
@@ -22598,7 +22446,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22610,7 +22458,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22622,7 +22470,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -22657,19 +22505,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_sysmgr"> </a>
+  <a name="module_ARM_MCU_sysmgr"> </a>
   <div>
    <hr/>
-   <h2>hps_0_sysmgr</h2>altera_sysmgr v17.0
+   <h2>ARM_MCU_sysmgr</h2>altera_sysmgr v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_sysmgr</td>
+      <td class="main" rowspan="10">ARM_MCU_sysmgr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -22685,7 +22533,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22697,7 +22545,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22736,19 +22584,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_clkmgr"> </a>
+  <a name="module_ARM_MCU_clkmgr"> </a>
   <div>
    <hr/>
-   <h2>hps_0_clkmgr</h2>asimov_clkmgr v17.0
+   <h2>ARM_MCU_clkmgr</h2>asimov_clkmgr v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="96">hps_0_clkmgr</td>
+      <td class="main" rowspan="96">ARM_MCU_clkmgr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -22758,7 +22606,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_eosc1">hps_0_eosc1</a>
+       <a href="#module_ARM_MCU_eosc1">ARM_MCU_eosc1</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -22770,7 +22618,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_eosc2">hps_0_eosc2</a>
+       <a href="#module_ARM_MCU_eosc2">ARM_MCU_eosc2</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -22782,7 +22630,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_f2s_periph_ref_clk">hps_0_f2s_periph_ref_clk</a>
+       <a href="#module_ARM_MCU_f2s_periph_ref_clk">ARM_MCU_f2s_periph_ref_clk</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -22794,7 +22642,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_f2s_sdram_ref_clk">hps_0_f2s_sdram_ref_clk</a>
+       <a href="#module_ARM_MCU_f2s_sdram_ref_clk">ARM_MCU_f2s_sdram_ref_clk</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -22806,7 +22654,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22818,7 +22666,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -22830,7 +22678,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_main_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dma">hps_0_dma</a>
+       <a href="#module_ARM_MCU_dma">ARM_MCU_dma</a>
       </td>
      </tr>
      <tr>
@@ -22846,7 +22694,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart0">hps_0_uart0</a>
+       <a href="#module_ARM_MCU_uart0">ARM_MCU_uart0</a>
       </td>
      </tr>
      <tr>
@@ -22862,7 +22710,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_uart1">hps_0_uart1</a>
+       <a href="#module_ARM_MCU_uart1">ARM_MCU_uart1</a>
       </td>
      </tr>
      <tr>
@@ -22878,7 +22726,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer0">hps_0_timer0</a>
+       <a href="#module_ARM_MCU_timer0">ARM_MCU_timer0</a>
       </td>
      </tr>
      <tr>
@@ -22894,7 +22742,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer1">hps_0_timer1</a>
+       <a href="#module_ARM_MCU_timer1">ARM_MCU_timer1</a>
       </td>
      </tr>
      <tr>
@@ -22910,7 +22758,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">per_base_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_wd_timer1">hps_0_wd_timer1</a>
+       <a href="#module_ARM_MCU_wd_timer1">ARM_MCU_wd_timer1</a>
       </td>
      </tr>
      <tr>
@@ -22926,7 +22774,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio0">hps_0_gpio0</a>
+       <a href="#module_ARM_MCU_gpio0">ARM_MCU_gpio0</a>
       </td>
      </tr>
      <tr>
@@ -22942,7 +22790,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio1">hps_0_gpio1</a>
+       <a href="#module_ARM_MCU_gpio1">ARM_MCU_gpio1</a>
       </td>
      </tr>
      <tr>
@@ -22958,7 +22806,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gpio2">hps_0_gpio2</a>
+       <a href="#module_ARM_MCU_gpio2">ARM_MCU_gpio2</a>
       </td>
      </tr>
      <tr>
@@ -22974,7 +22822,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c0">hps_0_i2c0</a>
+       <a href="#module_ARM_MCU_i2c0">ARM_MCU_i2c0</a>
       </td>
      </tr>
      <tr>
@@ -22990,7 +22838,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c1">hps_0_i2c1</a>
+       <a href="#module_ARM_MCU_i2c1">ARM_MCU_i2c1</a>
       </td>
      </tr>
      <tr>
@@ -23006,7 +22854,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c2">hps_0_i2c2</a>
+       <a href="#module_ARM_MCU_i2c2">ARM_MCU_i2c2</a>
       </td>
      </tr>
      <tr>
@@ -23022,7 +22870,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_i2c3">hps_0_i2c3</a>
+       <a href="#module_ARM_MCU_i2c3">ARM_MCU_i2c3</a>
       </td>
      </tr>
      <tr>
@@ -23038,7 +22886,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">nand_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_nand0">hps_0_nand0</a>
+       <a href="#module_ARM_MCU_nand0">ARM_MCU_nand0</a>
       </td>
      </tr>
      <tr>
@@ -23054,7 +22902,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">spi_m_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim0">hps_0_spim0</a>
+       <a href="#module_ARM_MCU_spim0">ARM_MCU_spim0</a>
       </td>
      </tr>
      <tr>
@@ -23070,7 +22918,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">spi_m_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_spim1">hps_0_spim1</a>
+       <a href="#module_ARM_MCU_spim1">ARM_MCU_spim1</a>
       </td>
      </tr>
      <tr>
@@ -23086,7 +22934,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">qspi_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_qspi">hps_0_qspi</a>
+       <a href="#module_ARM_MCU_qspi">ARM_MCU_qspi</a>
       </td>
      </tr>
      <tr>
@@ -23102,7 +22950,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_sdmmc">hps_0_sdmmc</a>
+       <a href="#module_ARM_MCU_sdmmc">ARM_MCU_sdmmc</a>
       </td>
      </tr>
      <tr>
@@ -23128,7 +22976,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">usb_mp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb0">hps_0_usb0</a>
+       <a href="#module_ARM_MCU_usb0">ARM_MCU_usb0</a>
       </td>
      </tr>
      <tr>
@@ -23144,7 +22992,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">usb_mp_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_usb1">hps_0_usb1</a>
+       <a href="#module_ARM_MCU_usb1">ARM_MCU_usb1</a>
       </td>
      </tr>
      <tr>
@@ -23160,7 +23008,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">emac0_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac0">hps_0_gmac0</a>
+       <a href="#module_ARM_MCU_gmac0">ARM_MCU_gmac0</a>
       </td>
      </tr>
      <tr>
@@ -23176,7 +23024,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">emac1_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_gmac1">hps_0_gmac1</a>
+       <a href="#module_ARM_MCU_gmac1">ARM_MCU_gmac1</a>
       </td>
      </tr>
      <tr>
@@ -23192,7 +23040,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">can0_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dcan0">hps_0_dcan0</a>
+       <a href="#module_ARM_MCU_dcan0">ARM_MCU_dcan0</a>
       </td>
      </tr>
      <tr>
@@ -23208,7 +23056,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">can1_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_dcan1">hps_0_dcan1</a>
+       <a href="#module_ARM_MCU_dcan1">ARM_MCU_dcan1</a>
       </td>
      </tr>
      <tr>
@@ -23224,7 +23072,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">mpu_periph_clk&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_timer">hps_0_timer</a>
+       <a href="#module_ARM_MCU_timer">ARM_MCU_timer</a>
       </td>
      </tr>
      <tr>
@@ -24020,19 +23868,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_rstmgr"> </a>
+  <a name="module_ARM_MCU_rstmgr"> </a>
   <div>
    <hr/>
-   <h2>hps_0_rstmgr</h2>altera_rstmgr v17.0
+   <h2>ARM_MCU_rstmgr</h2>altera_rstmgr v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_rstmgr</td>
+      <td class="main" rowspan="10">ARM_MCU_rstmgr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24048,7 +23896,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24060,7 +23908,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24099,19 +23947,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_fpgamgr"> </a>
+  <a name="module_ARM_MCU_fpgamgr"> </a>
   <div>
    <hr/>
-   <h2>hps_0_fpgamgr</h2>altera_fpgamgr v17.0
+   <h2>ARM_MCU_fpgamgr</h2>altera_fpgamgr v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="17">hps_0_fpgamgr</td>
+      <td class="main" rowspan="17">ARM_MCU_fpgamgr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24127,7 +23975,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24145,7 +23993,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24163,7 +24011,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24202,19 +24050,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_uart0"> </a>
+  <a name="module_ARM_MCU_uart0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_uart0</h2>snps_uart v17.0
+   <h2>ARM_MCU_uart0</h2>snps_uart v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_uart0</td>
+      <td class="main" rowspan="14">ARM_MCU_uart0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24224,7 +24072,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -24236,7 +24084,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24248,7 +24096,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24260,7 +24108,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -24326,19 +24174,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_uart1"> </a>
+  <a name="module_ARM_MCU_uart1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_uart1</h2>snps_uart v17.0
+   <h2>ARM_MCU_uart1</h2>snps_uart v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_uart1</td>
+      <td class="main" rowspan="14">ARM_MCU_uart1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24348,7 +24196,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -24360,7 +24208,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24372,7 +24220,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24384,7 +24232,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -24450,19 +24298,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_timer0"> </a>
+  <a name="module_ARM_MCU_timer0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_timer0</h2>dw_apb_timer_sp v17.0
+   <h2>ARM_MCU_timer0</h2>dw_apb_timer_sp v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_timer0</td>
+      <td class="main" rowspan="14">ARM_MCU_timer0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24472,7 +24320,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -24484,7 +24332,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24496,7 +24344,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24508,7 +24356,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24543,19 +24391,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_timer1"> </a>
+  <a name="module_ARM_MCU_timer1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_timer1</h2>dw_apb_timer_sp v17.0
+   <h2>ARM_MCU_timer1</h2>dw_apb_timer_sp v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_timer1</td>
+      <td class="main" rowspan="14">ARM_MCU_timer1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24565,7 +24413,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -24577,7 +24425,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24589,7 +24437,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24601,7 +24449,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24636,19 +24484,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_timer2"> </a>
+  <a name="module_ARM_MCU_timer2"> </a>
   <div>
    <hr/>
-   <h2>hps_0_timer2</h2>dw_apb_timer_osc v17.0
+   <h2>ARM_MCU_timer2</h2>dw_apb_timer_osc v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_eosc1">hps_0_eosc1</a>
+       <a href="#module_ARM_MCU_eosc1">ARM_MCU_eosc1</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="13">hps_0_timer2</td>
+      <td class="main" rowspan="13">ARM_MCU_timer2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24664,7 +24512,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24676,7 +24524,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24688,7 +24536,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24723,19 +24571,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_timer3"> </a>
+  <a name="module_ARM_MCU_timer3"> </a>
   <div>
    <hr/>
-   <h2>hps_0_timer3</h2>dw_apb_timer_osc v17.0
+   <h2>ARM_MCU_timer3</h2>dw_apb_timer_osc v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_eosc1">hps_0_eosc1</a>
+       <a href="#module_ARM_MCU_eosc1">ARM_MCU_eosc1</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="13">hps_0_timer3</td>
+      <td class="main" rowspan="13">ARM_MCU_timer3</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24751,7 +24599,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24763,7 +24611,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24775,7 +24623,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24810,19 +24658,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_wd_timer0"> </a>
+  <a name="module_ARM_MCU_wd_timer0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_wd_timer0</h2>dw_wd_timer v17.0
+   <h2>ARM_MCU_wd_timer0</h2>dw_wd_timer v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_eosc1">hps_0_eosc1</a>
+       <a href="#module_ARM_MCU_eosc1">ARM_MCU_eosc1</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="13">hps_0_wd_timer0</td>
+      <td class="main" rowspan="13">ARM_MCU_wd_timer0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24838,7 +24686,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24850,7 +24698,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24862,7 +24710,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24897,19 +24745,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_wd_timer1"> </a>
+  <a name="module_ARM_MCU_wd_timer1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_wd_timer1</h2>dw_wd_timer v17.0
+   <h2>ARM_MCU_wd_timer1</h2>dw_wd_timer v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_wd_timer1</td>
+      <td class="main" rowspan="14">ARM_MCU_wd_timer1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -24919,7 +24767,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">per_base_clk&#160;&#160;</td>
      </tr>
@@ -24931,7 +24779,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24943,7 +24791,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -24955,7 +24803,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -24990,19 +24838,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_gpio0"> </a>
+  <a name="module_ARM_MCU_gpio0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_gpio0</h2>dw_gpio v17.0
+   <h2>ARM_MCU_gpio0</h2>dw_gpio v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_gpio0</td>
+      <td class="main" rowspan="14">ARM_MCU_gpio0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25012,7 +24860,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
      </tr>
@@ -25024,7 +24872,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25036,7 +24884,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25048,7 +24896,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25103,19 +24951,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_gpio1"> </a>
+  <a name="module_ARM_MCU_gpio1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_gpio1</h2>dw_gpio v17.0
+   <h2>ARM_MCU_gpio1</h2>dw_gpio v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_gpio1</td>
+      <td class="main" rowspan="14">ARM_MCU_gpio1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25125,7 +24973,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
      </tr>
@@ -25137,7 +24985,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25149,7 +24997,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25161,7 +25009,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25216,19 +25064,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_gpio2"> </a>
+  <a name="module_ARM_MCU_gpio2"> </a>
   <div>
    <hr/>
-   <h2>hps_0_gpio2</h2>dw_gpio v17.0
+   <h2>ARM_MCU_gpio2</h2>dw_gpio v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_gpio2</td>
+      <td class="main" rowspan="14">ARM_MCU_gpio2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25238,7 +25086,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
      </tr>
@@ -25250,7 +25098,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25262,7 +25110,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25274,7 +25122,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_166&#160;&#160;</td>
      </tr>
@@ -25329,19 +25177,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_i2c0"> </a>
+  <a name="module_ARM_MCU_i2c0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_i2c0</h2>designware_i2c v17.0
+   <h2>ARM_MCU_i2c0</h2>designware_i2c v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_i2c0</td>
+      <td class="main" rowspan="14">ARM_MCU_i2c0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25351,7 +25199,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -25363,7 +25211,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25375,7 +25223,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25387,7 +25235,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25426,19 +25274,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_i2c1"> </a>
+  <a name="module_ARM_MCU_i2c1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_i2c1</h2>designware_i2c v17.0
+   <h2>ARM_MCU_i2c1</h2>designware_i2c v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_i2c1</td>
+      <td class="main" rowspan="14">ARM_MCU_i2c1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25448,7 +25296,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -25460,7 +25308,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25472,7 +25320,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25484,7 +25332,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25523,19 +25371,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_i2c2"> </a>
+  <a name="module_ARM_MCU_i2c2"> </a>
   <div>
    <hr/>
-   <h2>hps_0_i2c2</h2>designware_i2c v17.0
+   <h2>ARM_MCU_i2c2</h2>designware_i2c v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_i2c2</td>
+      <td class="main" rowspan="14">ARM_MCU_i2c2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25545,7 +25393,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -25557,7 +25405,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25569,7 +25417,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25581,7 +25429,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25620,19 +25468,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_i2c3"> </a>
+  <a name="module_ARM_MCU_i2c3"> </a>
   <div>
    <hr/>
-   <h2>hps_0_i2c3</h2>designware_i2c v17.0
+   <h2>ARM_MCU_i2c3</h2>designware_i2c v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_i2c3</td>
+      <td class="main" rowspan="14">ARM_MCU_i2c3</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25642,7 +25490,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_sp_clk&#160;&#160;</td>
      </tr>
@@ -25654,7 +25502,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25666,7 +25514,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25678,7 +25526,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25717,19 +25565,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_nand0"> </a>
+  <a name="module_ARM_MCU_nand0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_nand0</h2>denali_nand v17.0
+   <h2>ARM_MCU_nand0</h2>denali_nand v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="18">hps_0_nand0</td>
+      <td class="main" rowspan="18">ARM_MCU_nand0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25739,7 +25587,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">nand_clk&#160;&#160;</td>
      </tr>
@@ -25751,7 +25599,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25769,7 +25617,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25787,7 +25635,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25826,19 +25674,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_spim0"> </a>
+  <a name="module_ARM_MCU_spim0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_spim0</h2>spi v17.0
+   <h2>ARM_MCU_spim0</h2>spi v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_spim0</td>
+      <td class="main" rowspan="14">ARM_MCU_spim0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25848,7 +25696,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">spi_m_clk&#160;&#160;</td>
      </tr>
@@ -25860,7 +25708,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25872,7 +25720,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25884,7 +25732,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -25923,19 +25771,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_spim1"> </a>
+  <a name="module_ARM_MCU_spim1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_spim1</h2>spi v17.0
+   <h2>ARM_MCU_spim1</h2>spi v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_spim1</td>
+      <td class="main" rowspan="14">ARM_MCU_spim1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -25945,7 +25793,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">spi_m_clk&#160;&#160;</td>
      </tr>
@@ -25957,7 +25805,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25969,7 +25817,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -25981,7 +25829,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -26020,19 +25868,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_qspi"> </a>
+  <a name="module_ARM_MCU_qspi"> </a>
   <div>
    <hr/>
-   <h2>hps_0_qspi</h2>cadence_qspi v17.0
+   <h2>ARM_MCU_qspi</h2>cadence_qspi v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="18">hps_0_qspi</td>
+      <td class="main" rowspan="18">ARM_MCU_qspi</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26042,7 +25890,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">qspi_clk&#160;&#160;</td>
      </tr>
@@ -26054,7 +25902,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26072,7 +25920,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26090,7 +25938,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -26129,19 +25977,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_sdmmc"> </a>
+  <a name="module_ARM_MCU_sdmmc"> </a>
   <div>
    <hr/>
-   <h2>hps_0_sdmmc</h2>sdmmc v17.0
+   <h2>ARM_MCU_sdmmc</h2>sdmmc v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="16">hps_0_sdmmc</td>
+      <td class="main" rowspan="16">ARM_MCU_sdmmc</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26151,7 +25999,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">l4_mp_clk&#160;&#160;</td>
      </tr>
@@ -26169,7 +26017,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26181,7 +26029,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26193,7 +26041,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_136&#160;&#160;</td>
      </tr>
@@ -26232,19 +26080,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_usb0"> </a>
+  <a name="module_ARM_MCU_usb0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_usb0</h2>usb v17.0
+   <h2>ARM_MCU_usb0</h2>usb v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_usb0</td>
+      <td class="main" rowspan="14">ARM_MCU_usb0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26254,7 +26102,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">usb_mp_clk&#160;&#160;</td>
      </tr>
@@ -26266,7 +26114,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26278,7 +26126,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26290,7 +26138,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -26329,19 +26177,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_usb1"> </a>
+  <a name="module_ARM_MCU_usb1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_usb1</h2>usb v17.0
+   <h2>ARM_MCU_usb1</h2>usb v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_usb1</td>
+      <td class="main" rowspan="14">ARM_MCU_usb1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26351,7 +26199,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">usb_mp_clk&#160;&#160;</td>
      </tr>
@@ -26363,7 +26211,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26375,7 +26223,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26387,7 +26235,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -26426,19 +26274,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_gmac0"> </a>
+  <a name="module_ARM_MCU_gmac0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_gmac0</h2>stmmac v17.0
+   <h2>ARM_MCU_gmac0</h2>stmmac v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_gmac0</td>
+      <td class="main" rowspan="14">ARM_MCU_gmac0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26448,7 +26296,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">emac0_clk&#160;&#160;</td>
      </tr>
@@ -26460,7 +26308,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26472,7 +26320,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26484,7 +26332,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -26535,19 +26383,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_gmac1"> </a>
+  <a name="module_ARM_MCU_gmac1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_gmac1</h2>stmmac v17.0
+   <h2>ARM_MCU_gmac1</h2>stmmac v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_gmac1</td>
+      <td class="main" rowspan="14">ARM_MCU_gmac1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26557,7 +26405,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">emac1_clk&#160;&#160;</td>
      </tr>
@@ -26569,7 +26417,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26581,7 +26429,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26593,7 +26441,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -26644,19 +26492,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_dcan0"> </a>
+  <a name="module_ARM_MCU_dcan0"> </a>
   <div>
    <hr/>
-   <h2>hps_0_dcan0</h2>bosch_dcan v17.0
+   <h2>ARM_MCU_dcan0</h2>bosch_dcan v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="16">hps_0_dcan0</td>
+      <td class="main" rowspan="16">ARM_MCU_dcan0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26666,7 +26514,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">can0_clk&#160;&#160;</td>
      </tr>
@@ -26678,7 +26526,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26690,7 +26538,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26702,7 +26550,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -26747,19 +26595,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_dcan1"> </a>
+  <a name="module_ARM_MCU_dcan1"> </a>
   <div>
    <hr/>
-   <h2>hps_0_dcan1</h2>bosch_dcan v17.0
+   <h2>ARM_MCU_dcan1</h2>bosch_dcan v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="16">hps_0_dcan1</td>
+      <td class="main" rowspan="16">ARM_MCU_dcan1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26769,7 +26617,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">can1_clk&#160;&#160;</td>
      </tr>
@@ -26781,7 +26629,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26793,7 +26641,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26805,7 +26653,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">irq_rx_offset_104&#160;&#160;</td>
      </tr>
@@ -26850,19 +26698,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_l3regs"> </a>
+  <a name="module_ARM_MCU_l3regs"> </a>
   <div>
    <hr/>
-   <h2>hps_0_l3regs</h2>altera_l3regs v17.0
+   <h2>ARM_MCU_l3regs</h2>altera_l3regs v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_l3regs</td>
+      <td class="main" rowspan="10">ARM_MCU_l3regs</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26878,7 +26726,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26890,7 +26738,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26925,19 +26773,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_sdrctl"> </a>
+  <a name="module_ARM_MCU_sdrctl"> </a>
   <div>
    <hr/>
-   <h2>hps_0_sdrctl</h2>altera_sdrctl v17.0
+   <h2>ARM_MCU_sdrctl</h2>altera_sdrctl v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_sdrctl</td>
+      <td class="main" rowspan="10">ARM_MCU_sdrctl</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -26953,7 +26801,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -26965,7 +26813,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27000,19 +26848,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_axi_ocram"> </a>
+  <a name="module_ARM_MCU_axi_ocram"> </a>
   <div>
    <hr/>
-   <h2>hps_0_axi_ocram</h2>axi_ocram v17.0
+   <h2>ARM_MCU_axi_ocram</h2>axi_ocram v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_axi_ocram</td>
+      <td class="main" rowspan="10">ARM_MCU_axi_ocram</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -27028,7 +26876,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27040,7 +26888,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27090,19 +26938,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_axi_sdram"> </a>
+  <a name="module_ARM_MCU_axi_sdram"> </a>
   <div>
    <hr/>
-   <h2>hps_0_axi_sdram</h2>axi_sdram v17.0
+   <h2>ARM_MCU_axi_sdram</h2>axi_sdram v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_axi_sdram</td>
+      <td class="main" rowspan="10">ARM_MCU_axi_sdram</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -27118,7 +26966,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27130,7 +26978,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27180,19 +27028,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_timer"> </a>
+  <a name="module_ARM_MCU_timer"> </a>
   <div>
    <hr/>
-   <h2>hps_0_timer</h2>arm_internal_timer v17.0
+   <h2>ARM_MCU_timer</h2>arm_internal_timer v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="14">hps_0_timer</td>
+      <td class="main" rowspan="14">ARM_MCU_timer</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -27202,7 +27050,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_clkmgr">hps_0_clkmgr</a>
+       <a href="#module_ARM_MCU_clkmgr">ARM_MCU_clkmgr</a>
       </td>
       <td class="from">mpu_periph_clk&#160;&#160;</td>
      </tr>
@@ -27214,7 +27062,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27226,7 +27074,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27238,7 +27086,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_gic_0">hps_0_arm_gic_0</a>
+       <a href="#module_ARM_MCU_arm_gic_0">ARM_MCU_arm_gic_0</a>
       </td>
       <td class="from">arm_gic_ppi&#160;&#160;</td>
      </tr>
@@ -27273,19 +27121,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_hps_0_scu"> </a>
+  <a name="module_ARM_MCU_scu"> </a>
   <div>
    <hr/>
-   <h2>hps_0_scu</h2>scu v17.0
+   <h2>ARM_MCU_scu</h2>scu v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
+       <a href="#module_ARM_MCU_clk_0">ARM_MCU_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="10">hps_0_scu</td>
+      <td class="main" rowspan="10">ARM_MCU_scu</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -27301,7 +27149,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_0">hps_0_arm_a9_0</a>
+       <a href="#module_ARM_MCU_arm_a9_0">ARM_MCU_arm_a9_0</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27313,7 +27161,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_arm_a9_1">hps_0_arm_a9_1</a>
+       <a href="#module_ARM_MCU_arm_a9_1">ARM_MCU_arm_a9_1</a>
       </td>
       <td class="from">altera_axi_master&#160;&#160;</td>
      </tr>
@@ -27348,19 +27196,369 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_mm_bridge_0"> </a>
+  <a name="module_CLOCK"> </a>
   <div>
    <hr/>
-   <h2>mm_bridge_0</h2>altera_avalon_mm_bridge v17.0
+   <h2>CLOCK</h2>clock_source v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_hps_0_bridges">hps_0_bridges</a>
+       <a href="#module_ARM_MCU_bridges">ARM_MCU_bridges</a>
+      </td>
+      <td class="from">h2f_reset&#160;&#160;</td>
+      <td class="main" rowspan="19">CLOCK</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_LED_ARRAY">LED_ARRAY</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_MM_BRIDGE">MM_BRIDGE</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_SWITCH_ARRAY">SWITCH_ARRAY</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ARM_MCU_bridges">ARM_MCU_bridges</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;h2f_lw_axi_clock</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">clockFrequency</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockFrequencyKnown</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputClockFrequency</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetSynchronousEdges</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_LED_ARRAY"> </a>
+  <div>
+   <hr/>
+   <h2>LED_ARRAY</h2>altera_avalon_pio v17.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_MM_BRIDGE">MM_BRIDGE</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">LED_ARRAY</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_CLOCK">CLOCK</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_MM_BRIDGE"> </a>
+  <div>
+   <hr/>
+   <h2>MM_BRIDGE</h2>altera_avalon_mm_bridge v17.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ARM_MCU_bridges">ARM_MCU_bridges</a>
       </td>
       <td class="from">h2f_lw&#160;&#160;</td>
-      <td class="main" rowspan="12">mm_bridge_0</td>
+      <td class="main" rowspan="12">MM_BRIDGE</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s0</td>
@@ -27370,7 +27568,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+       <a href="#module_CLOCK">CLOCK</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -27388,7 +27586,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">m0&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_pio_0">pio_0</a>
+       <a href="#module_LED_ARRAY">LED_ARRAY</a>
       </td>
      </tr>
      <tr>
@@ -27404,7 +27602,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">m0&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_switchPIO">switchPIO</a>
+       <a href="#module_SWITCH_ARRAY">SWITCH_ARRAY</a>
       </td>
      </tr>
      <tr>
@@ -27500,19 +27698,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_pio_0"> </a>
+  <a name="module_SWITCH_ARRAY"> </a>
   <div>
    <hr/>
-   <h2>pio_0</h2>altera_avalon_pio v17.0
+   <h2>SWITCH_ARRAY</h2>altera_avalon_pio v17.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_mm_bridge_0">mm_bridge_0</a>
+       <a href="#module_MM_BRIDGE">MM_BRIDGE</a>
       </td>
       <td class="from">m0&#160;&#160;</td>
-      <td class="main" rowspan="7">pio_0</td>
+      <td class="main" rowspan="7">SWITCH_ARRAY</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -27522,205 +27720,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
-      </td>
-      <td class="from">clk&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;clk</td>
-     </tr>
-     <tr>
-      <td class="from">clk_reset&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset</td>
-     </tr>
-    </table>
-   </div>
-   <br/>
-   <br/>
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Parameters</h2>
-      <table>
-       <tr>
-        <td class="parametername">bitClearingEdgeCapReg</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">bitModifyingOutReg</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">captureEdge</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">direction</td>
-        <td class="parametervalue">Output</td>
-       </tr>
-       <tr>
-        <td class="parametername">edgeType</td>
-        <td class="parametervalue">RISING</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateIRQ</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">irqType</td>
-        <td class="parametervalue">LEVEL</td>
-       </tr>
-       <tr>
-        <td class="parametername">resetValue</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">simDoTestBenchWiring</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">simDrivenValue</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">width</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_has_tri</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_has_out</td>
-        <td class="parametervalue">true</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_has_in</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_do_test_bench_wiring</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_capture</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_edge_type</td>
-        <td class="parametervalue">NONE</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_irq_type</td>
-        <td class="parametervalue">NONE</td>
-       </tr>
-       <tr>
-        <td class="parametername">derived_has_irq</td>
-        <td class="parametervalue">false</td>
-       </tr>
-       <tr>
-        <td class="parametername">deviceFamily</td>
-        <td class="parametervalue">UNKNOWN</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateLegacySim</td>
-        <td class="parametervalue">false</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>&#160;&#160;
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Software Assignments</h2>
-      <table>
-       <tr>
-        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">CAPTURE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">DATA_WIDTH</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">DO_TEST_BENCH_WIRING</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">DRIVEN_SIM_VALUE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">EDGE_TYPE</td>
-        <td class="parametervalue">NONE</td>
-       </tr>
-       <tr>
-        <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
-       </tr>
-       <tr>
-        <td class="parametername">HAS_IN</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">HAS_OUT</td>
-        <td class="parametervalue">1</td>
-       </tr>
-       <tr>
-        <td class="parametername">HAS_TRI</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">IRQ_TYPE</td>
-        <td class="parametervalue">NONE</td>
-       </tr>
-       <tr>
-        <td class="parametername">RESET_VALUE</td>
-        <td class="parametervalue">0</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>
-  </div>
-  <a name="module_switchPIO"> </a>
-  <div>
-   <hr/>
-   <h2>switchPIO</h2>altera_avalon_pio v17.0
-   <br/>
-   <div class="greydiv">
-    <table class="connectionboxes">
-     <tr>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_mm_bridge_0">mm_bridge_0</a>
-      </td>
-      <td class="from">m0&#160;&#160;</td>
-      <td class="main" rowspan="7">switchPIO</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;s1</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+       <a href="#module_CLOCK">CLOCK</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
      </tr>
@@ -27784,7 +27784,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">width</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">4</td>
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
@@ -27853,7 +27853,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">DATA_WIDTH</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">4</td>
        </tr>
        <tr>
         <td class="parametername">DO_TEST_BENCH_WIRING</td>
@@ -27898,8 +27898,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0,03 seconds</td>
-    <td class="r">rendering took 0,91 seconds</td>
+    <td class="l">generation took 0,01 seconds</td>
+    <td class="r">rendering took 0,41 seconds</td>
    </tr>
   </table>
  </body>
