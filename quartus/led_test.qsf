@@ -49,8 +49,6 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE src/top.v
-set_global_assignment -name QIP_FILE src/qsys/ledtest/synthesis/ledtest.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -332,7 +330,33 @@ set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[2]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to memory_mem_dm[2] -tag __hps_sdram_p0
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[3] -tag __hps_sdram_p0
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to memory_mem_dm[3] -tag __hps_sdram_p0
-set_location_assignment PIN_V11 -to clock
-set_location_assignment PIN_W15 -to led
-set_location_assignment PIN_W20 -to switch
+set_location_assignment PIN_V11 -to CLOCK50
+set_location_assignment PIN_W15 -to LED_ARRAY_IO[0]
+set_location_assignment PIN_AA24 -to LED_ARRAY_IO[1]
+set_location_assignment PIN_V16 -to LED_ARRAY_IO[2]
+set_location_assignment PIN_V15 -to LED_ARRAY_IO[3]
+set_location_assignment PIN_AF26 -to LED_ARRAY_IO[4]
+set_location_assignment PIN_AE26 -to LED_ARRAY_IO[5]
+set_location_assignment PIN_Y16 -to LED_ARRAY_IO[6]
+set_location_assignment PIN_AA23 -to LED_ARRAY_IO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ARRAY_IO[0]
+set_location_assignment PIN_Y24 -to SWITCH_ARRAY_IO[0]
+set_location_assignment PIN_W24 -to SWITCH_ARRAY_IO[1]
+set_location_assignment PIN_W21 -to SWITCH_ARRAY_IO[2]
+set_location_assignment PIN_W20 -to SWITCH_ARRAY_IO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SWITCH_ARRAY_IO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SWITCH_ARRAY_IO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SWITCH_ARRAY_IO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SWITCH_ARRAY_IO[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SDC_FILE led_test.sdc
+set_global_assignment -name VERILOG_FILE src/top.v
+set_global_assignment -name QIP_FILE src/qsys/ledtest/synthesis/ledtest.qip
