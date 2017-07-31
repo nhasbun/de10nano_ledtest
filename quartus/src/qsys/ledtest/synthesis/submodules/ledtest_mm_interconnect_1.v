@@ -25,7 +25,10 @@ module ledtest_mm_interconnect_1 (
 		output wire [31:0] LED_ARRAY_s1_writedata,                      //                                      .writedata
 		output wire        LED_ARRAY_s1_chipselect,                     //                                      .chipselect
 		output wire [1:0]  SWITCH_ARRAY_s1_address,                     //                       SWITCH_ARRAY_s1.address
-		input  wire [31:0] SWITCH_ARRAY_s1_readdata                     //                                      .readdata
+		output wire        SWITCH_ARRAY_s1_write,                       //                                      .write
+		input  wire [31:0] SWITCH_ARRAY_s1_readdata,                    //                                      .readdata
+		output wire [31:0] SWITCH_ARRAY_s1_writedata,                   //                                      .writedata
+		output wire        SWITCH_ARRAY_s1_chipselect                   //                                      .chipselect
 	);
 
 	wire         mm_bridge_m0_translator_avalon_universal_master_0_waitrequest;   // MM_BRIDGE_m0_agent:av_waitrequest -> MM_BRIDGE_m0_translator:uav_waitrequest
@@ -348,10 +351,11 @@ module ledtest_mm_interconnect_1 (
 		.uav_lock               (switch_array_s1_agent_m0_lock),               //                         .lock
 		.uav_debugaccess        (switch_array_s1_agent_m0_debugaccess),        //                         .debugaccess
 		.av_address             (SWITCH_ARRAY_s1_address),                     //      avalon_anti_slave_0.address
+		.av_write               (SWITCH_ARRAY_s1_write),                       //                         .write
 		.av_readdata            (SWITCH_ARRAY_s1_readdata),                    //                         .readdata
-		.av_write               (),                                            //              (terminated)
+		.av_writedata           (SWITCH_ARRAY_s1_writedata),                   //                         .writedata
+		.av_chipselect          (SWITCH_ARRAY_s1_chipselect),                  //                         .chipselect
 		.av_read                (),                                            //              (terminated)
-		.av_writedata           (),                                            //              (terminated)
 		.av_begintransfer       (),                                            //              (terminated)
 		.av_beginbursttransfer  (),                                            //              (terminated)
 		.av_burstcount          (),                                            //              (terminated)
@@ -360,7 +364,6 @@ module ledtest_mm_interconnect_1 (
 		.av_waitrequest         (1'b0),                                        //              (terminated)
 		.av_writebyteenable     (),                                            //              (terminated)
 		.av_lock                (),                                            //              (terminated)
-		.av_chipselect          (),                                            //              (terminated)
 		.av_clken               (),                                            //              (terminated)
 		.uav_clken              (1'b0),                                        //              (terminated)
 		.av_debugaccess         (),                                            //              (terminated)

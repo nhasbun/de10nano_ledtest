@@ -21,29 +21,41 @@
 module ledtest_SWITCH_ARRAY (
                               // inputs:
                                address,
+                               chipselect,
                                clk,
                                in_port,
                                reset_n,
+                               write_n,
+                               writedata,
 
                               // outputs:
+                               irq,
                                readdata
                             )
 ;
 
+  output           irq;
   output  [ 31: 0] readdata;
   input   [  1: 0] address;
+  input            chipselect;
   input            clk;
   input   [  3: 0] in_port;
   input            reset_n;
+  input            write_n;
+  input   [ 31: 0] writedata;
 
 
 wire             clk_en;
 wire    [  3: 0] data_in;
+wire             irq;
+reg     [  3: 0] irq_mask;
 wire    [  3: 0] read_mux_out;
 reg     [ 31: 0] readdata;
   assign clk_en = 1;
   //s1, which is an e_avalon_slave
-  assign read_mux_out = {4 {(address == 0)}} & data_in;
+  assign read_mux_out = ({4 {(address == 0)}} & data_in) |
+    ({4 {(address == 2)}} & irq_mask);
+
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
@@ -54,6 +66,16 @@ reg     [ 31: 0] readdata;
 
 
   assign data_in = in_port;
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          irq_mask <= 0;
+      else if (chipselect && ~write_n && (address == 2))
+          irq_mask <= writedata[3 : 0];
+    end
+
+
+  assign irq = |(data_in      & irq_mask);
 
 endmodule
 

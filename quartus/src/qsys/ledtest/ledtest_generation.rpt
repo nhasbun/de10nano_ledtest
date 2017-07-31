@@ -45,17 +45,21 @@ Info: ledtest.ARM_MCU: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: ledtest.SWITCH_ARRAY: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: ledtest: Generating ledtest "ledtest" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master ARM_MCU.h2f_lw_axi_master and slave MM_BRIDGE.s0 because the master is of type axi and the slave is of type avalon.
+Warning: ARM_MCU.f2h_irq0: Cannot connect clock for irq_mapper.sender
+Warning: ARM_MCU.f2h_irq0: Cannot connect reset for irq_mapper.sender
+Warning: ARM_MCU.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
+Warning: ARM_MCU.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: ARM_MCU: "Running  for module: ARM_MCU"
 Info: ARM_MCU: HPS Main PLL counter settings: n = 0  m = 63
 Info: ARM_MCU: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: ARM_MCU: "ledtest" instantiated altera_hps "ARM_MCU"
 Info: LED_ARRAY: Starting RTL generation for module 'ledtest_LED_ARRAY'
-Info: LED_ARRAY:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_LED_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7377_8786925524325691284.dir/0028_LED_ARRAY_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7377_8786925524325691284.dir/0028_LED_ARRAY_gen//ledtest_LED_ARRAY_component_configuration.pl  --do_build_sim=0  ]
+Info: LED_ARRAY:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_LED_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0001_LED_ARRAY_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0001_LED_ARRAY_gen//ledtest_LED_ARRAY_component_configuration.pl  --do_build_sim=0  ]
 Info: LED_ARRAY: Done RTL generation for module 'ledtest_LED_ARRAY'
 Info: LED_ARRAY: "ledtest" instantiated altera_avalon_pio "LED_ARRAY"
 Info: MM_BRIDGE: "ledtest" instantiated altera_avalon_mm_bridge "MM_BRIDGE"
 Info: SWITCH_ARRAY: Starting RTL generation for module 'ledtest_SWITCH_ARRAY'
-Info: SWITCH_ARRAY:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_SWITCH_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7377_8786925524325691284.dir/0030_SWITCH_ARRAY_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7377_8786925524325691284.dir/0030_SWITCH_ARRAY_gen//ledtest_SWITCH_ARRAY_component_configuration.pl  --do_build_sim=0  ]
+Info: SWITCH_ARRAY:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_SWITCH_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0003_SWITCH_ARRAY_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0003_SWITCH_ARRAY_gen//ledtest_SWITCH_ARRAY_component_configuration.pl  --do_build_sim=0  ]
 Info: SWITCH_ARRAY: Done RTL generation for module 'ledtest_SWITCH_ARRAY'
 Info: SWITCH_ARRAY: "ledtest" instantiated altera_avalon_pio "SWITCH_ARRAY"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -63,6 +67,8 @@ Info: mm_interconnect_0: "ledtest" instantiated altera_mm_interconnect "mm_inter
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "ledtest" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: irq_mapper: "ledtest" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "ledtest" instantiated altera_irq_mapper "irq_mapper_001"
 Info: rst_controller: "ledtest" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "ARM_MCU" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "ARM_MCU" instantiated altera_hps_io "hps_io"
@@ -95,6 +101,6 @@ Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_m
 Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: ledtest: Done "ledtest" with 33 modules, 90 files
+Info: ledtest: Done "ledtest" with 35 modules, 92 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

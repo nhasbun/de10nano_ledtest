@@ -101,8 +101,14 @@ module ledtest (
 	wire   [1:0] mm_interconnect_1_led_array_s1_address;       // mm_interconnect_1:LED_ARRAY_s1_address -> LED_ARRAY:address
 	wire         mm_interconnect_1_led_array_s1_write;         // mm_interconnect_1:LED_ARRAY_s1_write -> LED_ARRAY:write_n
 	wire  [31:0] mm_interconnect_1_led_array_s1_writedata;     // mm_interconnect_1:LED_ARRAY_s1_writedata -> LED_ARRAY:writedata
+	wire         mm_interconnect_1_switch_array_s1_chipselect; // mm_interconnect_1:SWITCH_ARRAY_s1_chipselect -> SWITCH_ARRAY:chipselect
 	wire  [31:0] mm_interconnect_1_switch_array_s1_readdata;   // SWITCH_ARRAY:readdata -> mm_interconnect_1:SWITCH_ARRAY_s1_readdata
 	wire   [1:0] mm_interconnect_1_switch_array_s1_address;    // mm_interconnect_1:SWITCH_ARRAY_s1_address -> SWITCH_ARRAY:address
+	wire         mm_interconnect_1_switch_array_s1_write;      // mm_interconnect_1:SWITCH_ARRAY_s1_write -> SWITCH_ARRAY:write_n
+	wire  [31:0] mm_interconnect_1_switch_array_s1_writedata;  // mm_interconnect_1:SWITCH_ARRAY_s1_writedata -> SWITCH_ARRAY:writedata
+	wire         irq_mapper_receiver0_irq;                     // SWITCH_ARRAY:irq -> irq_mapper:receiver0_irq
+	wire  [31:0] arm_mcu_f2h_irq0_irq;                         // irq_mapper:sender_irq -> ARM_MCU:f2h_irq_p0
+	wire  [31:0] arm_mcu_f2h_irq1_irq;                         // irq_mapper_001:sender_irq -> ARM_MCU:f2h_irq_p1
 	wire         rst_controller_reset_out_reset;               // rst_controller:reset_out -> [LED_ARRAY:reset_n, MM_BRIDGE:reset, SWITCH_ARRAY:reset_n, mm_interconnect_0:MM_BRIDGE_reset_reset_bridge_in_reset_reset, mm_interconnect_1:MM_BRIDGE_reset_reset_bridge_in_reset_reset]
 	wire         rst_controller_001_reset_out_reset;           // rst_controller_001:reset_out -> mm_interconnect_0:ARM_MCU_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
@@ -177,7 +183,9 @@ module ledtest (
 		.h2f_lw_RRESP             (arm_mcu_h2f_lw_axi_master_rresp),   //                  .rresp
 		.h2f_lw_RLAST             (arm_mcu_h2f_lw_axi_master_rlast),   //                  .rlast
 		.h2f_lw_RVALID            (arm_mcu_h2f_lw_axi_master_rvalid),  //                  .rvalid
-		.h2f_lw_RREADY            (arm_mcu_h2f_lw_axi_master_rready)   //                  .rready
+		.h2f_lw_RREADY            (arm_mcu_h2f_lw_axi_master_rready),  //                  .rready
+		.f2h_irq_p0               (arm_mcu_f2h_irq0_irq),              //          f2h_irq0.irq
+		.f2h_irq_p1               (arm_mcu_f2h_irq1_irq)               //          f2h_irq1.irq
 	);
 
 	ledtest_LED_ARRAY led_array (
@@ -226,11 +234,15 @@ module ledtest (
 	);
 
 	ledtest_SWITCH_ARRAY switch_array (
-		.clk      (clk_clk),                                    //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),            //               reset.reset_n
-		.address  (mm_interconnect_1_switch_array_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_1_switch_array_s1_readdata), //                    .readdata
-		.in_port  (switch_array_io_export)                      // external_connection.export
+		.clk        (clk_clk),                                      //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
+		.address    (mm_interconnect_1_switch_array_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_1_switch_array_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_1_switch_array_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_1_switch_array_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_1_switch_array_s1_readdata),   //                    .readdata
+		.in_port    (switch_array_io_export),                       // external_connection.export
+		.irq        (irq_mapper_receiver0_irq)                      //                 irq.irq
 	);
 
 	ledtest_mm_interconnect_0 mm_interconnect_0 (
@@ -286,25 +298,41 @@ module ledtest (
 	);
 
 	ledtest_mm_interconnect_1 mm_interconnect_1 (
-		.CLOCK_clk_clk                               (clk_clk),                                    //                             CLOCK_clk.clk
-		.MM_BRIDGE_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),             // MM_BRIDGE_reset_reset_bridge_in_reset.reset
-		.MM_BRIDGE_m0_address                        (mm_bridge_m0_address),                       //                          MM_BRIDGE_m0.address
-		.MM_BRIDGE_m0_waitrequest                    (mm_bridge_m0_waitrequest),                   //                                      .waitrequest
-		.MM_BRIDGE_m0_burstcount                     (mm_bridge_m0_burstcount),                    //                                      .burstcount
-		.MM_BRIDGE_m0_byteenable                     (mm_bridge_m0_byteenable),                    //                                      .byteenable
-		.MM_BRIDGE_m0_read                           (mm_bridge_m0_read),                          //                                      .read
-		.MM_BRIDGE_m0_readdata                       (mm_bridge_m0_readdata),                      //                                      .readdata
-		.MM_BRIDGE_m0_readdatavalid                  (mm_bridge_m0_readdatavalid),                 //                                      .readdatavalid
-		.MM_BRIDGE_m0_write                          (mm_bridge_m0_write),                         //                                      .write
-		.MM_BRIDGE_m0_writedata                      (mm_bridge_m0_writedata),                     //                                      .writedata
-		.MM_BRIDGE_m0_debugaccess                    (mm_bridge_m0_debugaccess),                   //                                      .debugaccess
-		.LED_ARRAY_s1_address                        (mm_interconnect_1_led_array_s1_address),     //                          LED_ARRAY_s1.address
-		.LED_ARRAY_s1_write                          (mm_interconnect_1_led_array_s1_write),       //                                      .write
-		.LED_ARRAY_s1_readdata                       (mm_interconnect_1_led_array_s1_readdata),    //                                      .readdata
-		.LED_ARRAY_s1_writedata                      (mm_interconnect_1_led_array_s1_writedata),   //                                      .writedata
-		.LED_ARRAY_s1_chipselect                     (mm_interconnect_1_led_array_s1_chipselect),  //                                      .chipselect
-		.SWITCH_ARRAY_s1_address                     (mm_interconnect_1_switch_array_s1_address),  //                       SWITCH_ARRAY_s1.address
-		.SWITCH_ARRAY_s1_readdata                    (mm_interconnect_1_switch_array_s1_readdata)  //                                      .readdata
+		.CLOCK_clk_clk                               (clk_clk),                                      //                             CLOCK_clk.clk
+		.MM_BRIDGE_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),               // MM_BRIDGE_reset_reset_bridge_in_reset.reset
+		.MM_BRIDGE_m0_address                        (mm_bridge_m0_address),                         //                          MM_BRIDGE_m0.address
+		.MM_BRIDGE_m0_waitrequest                    (mm_bridge_m0_waitrequest),                     //                                      .waitrequest
+		.MM_BRIDGE_m0_burstcount                     (mm_bridge_m0_burstcount),                      //                                      .burstcount
+		.MM_BRIDGE_m0_byteenable                     (mm_bridge_m0_byteenable),                      //                                      .byteenable
+		.MM_BRIDGE_m0_read                           (mm_bridge_m0_read),                            //                                      .read
+		.MM_BRIDGE_m0_readdata                       (mm_bridge_m0_readdata),                        //                                      .readdata
+		.MM_BRIDGE_m0_readdatavalid                  (mm_bridge_m0_readdatavalid),                   //                                      .readdatavalid
+		.MM_BRIDGE_m0_write                          (mm_bridge_m0_write),                           //                                      .write
+		.MM_BRIDGE_m0_writedata                      (mm_bridge_m0_writedata),                       //                                      .writedata
+		.MM_BRIDGE_m0_debugaccess                    (mm_bridge_m0_debugaccess),                     //                                      .debugaccess
+		.LED_ARRAY_s1_address                        (mm_interconnect_1_led_array_s1_address),       //                          LED_ARRAY_s1.address
+		.LED_ARRAY_s1_write                          (mm_interconnect_1_led_array_s1_write),         //                                      .write
+		.LED_ARRAY_s1_readdata                       (mm_interconnect_1_led_array_s1_readdata),      //                                      .readdata
+		.LED_ARRAY_s1_writedata                      (mm_interconnect_1_led_array_s1_writedata),     //                                      .writedata
+		.LED_ARRAY_s1_chipselect                     (mm_interconnect_1_led_array_s1_chipselect),    //                                      .chipselect
+		.SWITCH_ARRAY_s1_address                     (mm_interconnect_1_switch_array_s1_address),    //                       SWITCH_ARRAY_s1.address
+		.SWITCH_ARRAY_s1_write                       (mm_interconnect_1_switch_array_s1_write),      //                                      .write
+		.SWITCH_ARRAY_s1_readdata                    (mm_interconnect_1_switch_array_s1_readdata),   //                                      .readdata
+		.SWITCH_ARRAY_s1_writedata                   (mm_interconnect_1_switch_array_s1_writedata),  //                                      .writedata
+		.SWITCH_ARRAY_s1_chipselect                  (mm_interconnect_1_switch_array_s1_chipselect)  //                                      .chipselect
+	);
+
+	ledtest_irq_mapper irq_mapper (
+		.clk           (),                         //       clk.clk
+		.reset         (),                         // clk_reset.reset
+		.receiver0_irq (irq_mapper_receiver0_irq), // receiver0.irq
+		.sender_irq    (arm_mcu_f2h_irq0_irq)      //    sender.irq
+	);
+
+	ledtest_irq_mapper_001 irq_mapper_001 (
+		.clk        (),                     //       clk.clk
+		.reset      (),                     // clk_reset.reset
+		.sender_irq (arm_mcu_f2h_irq1_irq)  //    sender.irq
 	);
 
 	altera_reset_controller #(

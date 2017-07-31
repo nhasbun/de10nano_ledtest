@@ -15,6 +15,7 @@ module ledtest (
 	hps_io_hps_io_emac1_inst_RXD1,
 	hps_io_hps_io_emac1_inst_RXD2,
 	hps_io_hps_io_emac1_inst_RXD3,
+	led_array_io_export,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -31,7 +32,6 @@ module ledtest (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	led_array_io_export,
 	switch_array_io_export);	
 
 	input		clk_clk;
@@ -49,6 +49,7 @@ module ledtest (
 	input		hps_io_hps_io_emac1_inst_RXD1;
 	input		hps_io_hps_io_emac1_inst_RXD2;
 	input		hps_io_hps_io_emac1_inst_RXD3;
+	output	[7:0]	led_array_io_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;
@@ -65,6 +66,5 @@ module ledtest (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	output	[7:0]	led_array_io_export;
 	input	[3:0]	switch_array_io_export;
 endmodule

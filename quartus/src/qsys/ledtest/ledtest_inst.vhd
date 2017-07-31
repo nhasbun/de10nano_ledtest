@@ -15,6 +15,7 @@
 			hps_io_hps_io_emac1_inst_RXD1   : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD1
 			hps_io_hps_io_emac1_inst_RXD2   : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD2
 			hps_io_hps_io_emac1_inst_RXD3   : in    std_logic                     := 'X';             -- hps_io_emac1_inst_RXD3
+			led_array_io_export             : out   std_logic_vector(7 downto 0);                     -- export
 			memory_mem_a                    : out   std_logic_vector(14 downto 0);                    -- mem_a
 			memory_mem_ba                   : out   std_logic_vector(2 downto 0);                     -- mem_ba
 			memory_mem_ck                   : out   std_logic;                                        -- mem_ck
@@ -31,7 +32,6 @@
 			memory_mem_odt                  : out   std_logic;                                        -- mem_odt
 			memory_mem_dm                   : out   std_logic_vector(3 downto 0);                     -- mem_dm
 			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
-			led_array_io_export             : out   std_logic_vector(7 downto 0);                     -- export
 			switch_array_io_export          : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- export
 		);
 	end component ledtest;
@@ -53,6 +53,7 @@
 			hps_io_hps_io_emac1_inst_RXD1   => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD1,   --                .hps_io_emac1_inst_RXD1
 			hps_io_hps_io_emac1_inst_RXD2   => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD2,   --                .hps_io_emac1_inst_RXD2
 			hps_io_hps_io_emac1_inst_RXD3   => CONNECTED_TO_hps_io_hps_io_emac1_inst_RXD3,   --                .hps_io_emac1_inst_RXD3
+			led_array_io_export             => CONNECTED_TO_led_array_io_export,             --    led_array_io.export
 			memory_mem_a                    => CONNECTED_TO_memory_mem_a,                    --          memory.mem_a
 			memory_mem_ba                   => CONNECTED_TO_memory_mem_ba,                   --                .mem_ba
 			memory_mem_ck                   => CONNECTED_TO_memory_mem_ck,                   --                .mem_ck
@@ -69,7 +70,6 @@
 			memory_mem_odt                  => CONNECTED_TO_memory_mem_odt,                  --                .mem_odt
 			memory_mem_dm                   => CONNECTED_TO_memory_mem_dm,                   --                .mem_dm
 			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin,                --                .oct_rzqin
-			led_array_io_export             => CONNECTED_TO_led_array_io_export,             --    led_array_io.export
 			switch_array_io_export          => CONNECTED_TO_switch_array_io_export           -- switch_array_io.export
 		);
 

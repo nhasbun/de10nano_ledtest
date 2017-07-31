@@ -1,70 +1,70 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst ledtest.hps_0.sdrctl -pg 1
-preplace inst ledtest.hps_0.i2c0 -pg 1
-preplace inst ledtest.hps_0.gpio1 -pg 1
-preplace inst ledtest.hps_0.wd_timer0 -pg 1
-preplace inst ledtest.clk_0 -pg 1 -lvl 2 -y 150
-preplace inst ledtest.pio_0 -pg 1 -lvl 4 -y 130
-preplace inst ledtest.hps_0.usb0 -pg 1
-preplace inst ledtest.hps_0.i2c1 -pg 1
-preplace inst ledtest.hps_0.gpio2 -pg 1
-preplace inst ledtest.hps_0.wd_timer1 -pg 1
-preplace inst ledtest.hps_0.f2s_periph_ref_clk -pg 1
-preplace inst ledtest.hps_0.eosc1 -pg 1
-preplace inst ledtest.hps_0.fpga_interfaces -pg 1
-preplace inst ledtest.hps_0.usb1 -pg 1
-preplace inst ledtest.hps_0.i2c2 -pg 1
-preplace inst ledtest.hps_0.fpgamgr -pg 1
-preplace inst ledtest.hps_0.f2s_sdram_ref_clk -pg 1
-preplace inst ledtest.hps_0.eosc2 -pg 1
+preplace inst ledtest.ARM_MCU.scu -pg 1
+preplace inst ledtest.ARM_MCU.nand0 -pg 1
+preplace inst ledtest.ARM_MCU.wd_timer1 -pg 1
+preplace inst ledtest.ARM_MCU.timer2 -pg 1
+preplace inst ledtest.ARM_MCU.sysmgr -pg 1
+preplace inst ledtest.ARM_MCU.arm_gic_0 -pg 1
+preplace inst ledtest.ARM_MCU.eosc1 -pg 1
+preplace inst ledtest.CLOCK -pg 1 -lvl 2 -y 100
+preplace inst ledtest.ARM_MCU.dcan0 -pg 1
+preplace inst ledtest.ARM_MCU.gpio0 -pg 1
+preplace inst ledtest.ARM_MCU.timer3 -pg 1
+preplace inst ledtest.ARM_MCU.eosc2 -pg 1
+preplace inst ledtest.ARM_MCU -pg 1 -lvl 1 -y 50
+preplace inst ledtest.ARM_MCU.dcan1 -pg 1
+preplace inst ledtest.ARM_MCU.gpio1 -pg 1
 preplace inst ledtest -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst ledtest.hps_0.axi_ocram -pg 1
-preplace inst ledtest.hps_0.i2c3 -pg 1
-preplace inst ledtest.hps_0.hps_io.border -pg 1
-preplace inst ledtest.hps_0 -pg 1 -lvl 1 -y 70
-preplace inst ledtest.hps_0.axi_sdram -pg 1
-preplace inst ledtest.hps_0.gmac0 -pg 1
-preplace inst ledtest.hps_0.bridges -pg 1
-preplace inst ledtest.switchPIO -pg 1 -lvl 4 -y 30
-preplace inst ledtest.hps_0.gmac1 -pg 1
-preplace inst ledtest.hps_0.L2 -pg 1
-preplace inst ledtest.hps_0.arm_a9_0 -pg 1
-preplace inst ledtest.hps_0.dma -pg 1
-preplace inst ledtest.hps_0.arm_a9_1 -pg 1
-preplace inst ledtest.hps_0.hps_io -pg 1
-preplace inst ledtest.hps_0.scu -pg 1
-preplace inst ledtest.hps_0.timer -pg 1
-preplace inst ledtest.hps_0.spim0 -pg 1
-preplace inst ledtest.hps_0.timer0 -pg 1
-preplace inst ledtest.hps_0.uart0 -pg 1
-preplace inst ledtest.hps_0.clkmgr -pg 1
-preplace inst ledtest.hps_0.spim1 -pg 1
-preplace inst ledtest.hps_0.timer1 -pg 1
-preplace inst ledtest.hps_0.uart1 -pg 1
-preplace inst ledtest.hps_0.rstmgr -pg 1
-preplace inst ledtest.hps_0.sysmgr -pg 1
-preplace inst ledtest.mm_bridge_0 -pg 1 -lvl 3 -y 30
-preplace inst ledtest.hps_0.sdmmc -pg 1
-preplace inst ledtest.hps_0.timer2 -pg 1
-preplace inst ledtest.hps_0.dcan0 -pg 1
-preplace inst ledtest.hps_0.qspi -pg 1
-preplace inst ledtest.hps_0.timer3 -pg 1
-preplace inst ledtest.hps_0.l3regs -pg 1
-preplace inst ledtest.hps_0.dcan1 -pg 1
-preplace inst ledtest.hps_0.nand0 -pg 1
-preplace inst ledtest.hps_0.gpio0 -pg 1
-preplace inst ledtest.hps_0.arm_gic_0 -pg 1
-preplace inst ledtest.hps_0.clk_0 -pg 1
-preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)pio_0.external_connection,(SLAVE)ledtest.pio_0_external_connection) 1 0 4 NJ 220 NJ 220 NJ 160 NJ
-preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)ledtest.memory,(SLAVE)hps_0.memory) 1 0 1 NJ
-preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)switchPIO.external_connection,(SLAVE)ledtest.switch) 1 0 4 NJ 240 NJ 240 NJ 240 NJ
-preplace netloc FAN_OUT<net_container>ledtest</net_container>(SLAVE)mm_bridge_0.clk,(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)pio_0.clk,(SLAVE)switchPIO.clk,(MASTER)clk_0.clk) 1 0 4 200 170 NJ 140 750 140 930
-preplace netloc FAN_OUT<net_container>ledtest</net_container>(SLAVE)mm_bridge_0.reset,(SLAVE)pio_0.reset,(SLAVE)switchPIO.reset,(MASTER)clk_0.clk_reset) 1 2 2 770 120 970
-preplace netloc POINT_TO_POINT<net_container>ledtest</net_container>(SLAVE)clk_0.clk_in_reset,(MASTER)hps_0.h2f_reset) 1 1 1 530
-preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)ledtest.hps_io,(SLAVE)hps_0.hps_io) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>ledtest</net_container>(SLAVE)switchPIO.s1,(MASTER)mm_bridge_0.m0,(SLAVE)pio_0.s1) 1 3 1 910
-preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)clk_0.clk_in,(SLAVE)ledtest.clk) 1 0 2 NJ 200 NJ
-preplace netloc POINT_TO_POINT<net_container>ledtest</net_container>(SLAVE)mm_bridge_0.s0,(MASTER)hps_0.h2f_lw_axi_master) 1 1 2 NJ 80 N
-levelinfo -pg 1 0 170 1160
-levelinfo -hier ledtest 180 320 580 820 1000 1150
+preplace inst ledtest.ARM_MCU.spim0 -pg 1
+preplace inst ledtest.ARM_MCU.gpio2 -pg 1
+preplace inst ledtest.ARM_MCU.L2 -pg 1
+preplace inst ledtest.ARM_MCU.clk_0 -pg 1
+preplace inst ledtest.LED_ARRAY -pg 1 -lvl 4 -y 240
+preplace inst ledtest.ARM_MCU.axi_sdram -pg 1
+preplace inst ledtest.ARM_MCU.sdmmc -pg 1
+preplace inst ledtest.ARM_MCU.spim1 -pg 1
+preplace inst ledtest.ARM_MCU.hps_io.border -pg 1
+preplace inst ledtest.ARM_MCU.rstmgr -pg 1
+preplace inst ledtest.ARM_MCU.arm_a9_0 -pg 1
+preplace inst ledtest.ARM_MCU.f2s_periph_ref_clk -pg 1
+preplace inst ledtest.ARM_MCU.axi_ocram -pg 1
+preplace inst ledtest.ARM_MCU.arm_a9_1 -pg 1
+preplace inst ledtest.ARM_MCU.f2s_sdram_ref_clk -pg 1
+preplace inst ledtest.ARM_MCU.sdrctl -pg 1
+preplace inst ledtest.ARM_MCU.l3regs -pg 1
+preplace inst ledtest.ARM_MCU.gmac0 -pg 1
+preplace inst ledtest.ARM_MCU.usb0 -pg 1
+preplace inst ledtest.ARM_MCU.i2c0 -pg 1
+preplace inst ledtest.ARM_MCU.gmac1 -pg 1
+preplace inst ledtest.ARM_MCU.usb1 -pg 1
+preplace inst ledtest.ARM_MCU.i2c1 -pg 1
+preplace inst ledtest.ARM_MCU.hps_io -pg 1
+preplace inst ledtest.ARM_MCU.fpga_interfaces -pg 1
+preplace inst ledtest.SWITCH_ARRAY -pg 1 -lvl 4 -y 140
+preplace inst ledtest.ARM_MCU.i2c2 -pg 1
+preplace inst ledtest.ARM_MCU.i2c3 -pg 1
+preplace inst ledtest.ARM_MCU.uart0 -pg 1
+preplace inst ledtest.ARM_MCU.fpgamgr -pg 1
+preplace inst ledtest.ARM_MCU.clkmgr -pg 1
+preplace inst ledtest.MM_BRIDGE -pg 1 -lvl 3 -y 60
+preplace inst ledtest.ARM_MCU.timer -pg 1
+preplace inst ledtest.ARM_MCU.qspi -pg 1
+preplace inst ledtest.ARM_MCU.timer0 -pg 1
+preplace inst ledtest.ARM_MCU.uart1 -pg 1
+preplace inst ledtest.ARM_MCU.wd_timer0 -pg 1
+preplace inst ledtest.ARM_MCU.timer1 -pg 1
+preplace inst ledtest.ARM_MCU.dma -pg 1
+preplace inst ledtest.ARM_MCU.bridges -pg 1
+preplace netloc POINT_TO_POINT<net_container>ledtest</net_container>(MASTER)ARM_MCU.h2f_reset,(SLAVE)CLOCK.clk_in_reset) 1 1 1 450
+preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)ledtest.memory,(SLAVE)ARM_MCU.memory) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>ledtest</net_container>(MASTER)MM_BRIDGE.m0,(SLAVE)SWITCH_ARRAY.s1,(SLAVE)LED_ARRAY.s1) 1 3 1 870
+preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)SWITCH_ARRAY.external_connection,(SLAVE)ledtest.switch_array_io) 1 0 4 NJ 190 NJ 190 NJ 190 NJ
+preplace netloc FAN_OUT<net_container>ledtest</net_container>(SLAVE)LED_ARRAY.clk,(SLAVE)MM_BRIDGE.clk,(SLAVE)ARM_MCU.h2f_lw_axi_clock,(MASTER)CLOCK.clk,(SLAVE)SWITCH_ARRAY.clk) 1 0 4 140 170 NJ 170 710 150 910
+preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)CLOCK.clk_in,(SLAVE)ledtest.clk) 1 0 2 NJ 150 NJ
+preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)LED_ARRAY.external_connection,(SLAVE)ledtest.led_array_io) 1 0 4 NJ 270 NJ 270 NJ 270 NJ
+preplace netloc POINT_TO_POINT<net_container>ledtest</net_container>(SLAVE)MM_BRIDGE.s0,(MASTER)ARM_MCU.h2f_lw_axi_master) 1 1 2 NJ 60 690
+preplace netloc EXPORT<net_container>ledtest</net_container>(SLAVE)ledtest.hps_io,(SLAVE)ARM_MCU.hps_io) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>ledtest</net_container>(SLAVE)LED_ARRAY.reset,(SLAVE)MM_BRIDGE.reset,(SLAVE)SWITCH_ARRAY.reset,(MASTER)CLOCK.clk_reset) 1 2 2 730 170 850
+levelinfo -pg 1 0 110 1100
+levelinfo -hier ledtest 120 260 520 760 940 1090

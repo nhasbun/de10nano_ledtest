@@ -14,6 +14,7 @@
 		.hps_io_hps_io_emac1_inst_RXD1   (<connected-to-hps_io_hps_io_emac1_inst_RXD1>),   //                .hps_io_emac1_inst_RXD1
 		.hps_io_hps_io_emac1_inst_RXD2   (<connected-to-hps_io_hps_io_emac1_inst_RXD2>),   //                .hps_io_emac1_inst_RXD2
 		.hps_io_hps_io_emac1_inst_RXD3   (<connected-to-hps_io_hps_io_emac1_inst_RXD3>),   //                .hps_io_emac1_inst_RXD3
+		.led_array_io_export             (<connected-to-led_array_io_export>),             //    led_array_io.export
 		.memory_mem_a                    (<connected-to-memory_mem_a>),                    //          memory.mem_a
 		.memory_mem_ba                   (<connected-to-memory_mem_ba>),                   //                .mem_ba
 		.memory_mem_ck                   (<connected-to-memory_mem_ck>),                   //                .mem_ck
@@ -30,7 +31,6 @@
 		.memory_mem_odt                  (<connected-to-memory_mem_odt>),                  //                .mem_odt
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //                .mem_dm
 		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //                .oct_rzqin
-		.led_array_io_export             (<connected-to-led_array_io_export>),             //    led_array_io.export
 		.switch_array_io_export          (<connected-to-switch_array_io_export>)           // switch_array_io.export
 	);
 
