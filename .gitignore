@@ -13,3 +13,4 @@ quartus/hps_sdram_p0_summary.csv
 quartus/src/_.sublime-workspace
 *.sublime-workspace
 quartus/src/qsys/.qsys_edit/preferences.xml
+quartus/software/
