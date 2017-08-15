@@ -25,6 +25,14 @@
          type = "int";
       }
    }
+   element JTAG_DEBUG
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
    element LED_ARRAY
    {
       datum _sortIndex
@@ -88,6 +96,11 @@
  <instanceScript></instanceScript>
  <interface name="clk" internal="CLOCK.clk_in" type="clock" dir="end" />
  <interface name="hps_io" internal="ARM_MCU.hps_io" type="conduit" dir="end" />
+ <interface
+   name="jtag_debug_master_reset"
+   internal="JTAG_DEBUG.master_reset"
+   type="reset"
+   dir="start" />
  <interface
    name="led_array_io"
    internal="LED_ARRAY.external_connection"
@@ -196,7 +209,7 @@
   <parameter name="EXPORT_AFI_HALF_CLK" value="false" />
   <parameter name="EXTRA_SETTINGS" value="" />
   <parameter name="F2H_AXI_CLOCK_FREQ" value="100" />
-  <parameter name="F2H_SDRAM0_CLOCK_FREQ" value="100" />
+  <parameter name="F2H_SDRAM0_CLOCK_FREQ" value="50000000" />
   <parameter name="F2H_SDRAM1_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM2_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM3_CLOCK_FREQ" value="100" />
@@ -206,12 +219,12 @@
   <parameter name="F2SCLK_DBGRST_Enable" value="false" />
   <parameter name="F2SCLK_PERIPHCLK_Enable" value="false" />
   <parameter name="F2SCLK_PERIPHCLK_FREQ" value="0" />
-  <parameter name="F2SCLK_SDRAMCLK_Enable" value="false" />
-  <parameter name="F2SCLK_SDRAMCLK_FREQ" value="0" />
+  <parameter name="F2SCLK_SDRAMCLK_Enable" value="true" />
+  <parameter name="F2SCLK_SDRAMCLK_FREQ" value="50000000" />
   <parameter name="F2SCLK_WARMRST_Enable" value="false" />
-  <parameter name="F2SDRAM_Type" value="" />
-  <parameter name="F2SDRAM_Width" value="" />
-  <parameter name="F2SINTERRUPT_Enable" value="true" />
+  <parameter name="F2SDRAM_Type">Avalon-MM Bidirectional</parameter>
+  <parameter name="F2SDRAM_Width" value="256" />
+  <parameter name="F2SINTERRUPT_Enable" value="false" />
   <parameter name="F2S_Width" value="0" />
   <parameter name="FIX_READ_LATENCY" value="8" />
   <parameter name="FORCED_NON_LDC_ADDR_CMD_MEM_CK_INVERT" value="false" />
@@ -635,6 +648,20 @@
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
+ <module
+   name="JTAG_DEBUG"
+   kind="altera_jtag_avalon_master"
+   version="17.0"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="COMPONENT_CLOCK" value="0" />
+  <parameter name="FAST_VER" value="0" />
+  <parameter name="FIFO_DEPTHS" value="2" />
+  <parameter name="PLI_PORT" value="50000" />
+  <parameter name="USE_PLI" value="0" />
+ </module>
  <module name="LED_ARRAY" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -678,7 +705,7 @@
   <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="true" />
+  <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
@@ -708,21 +735,39 @@
   <parameter name="baseAddress" value="0x0010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="JTAG_DEBUG.master"
+   end="ARM_MCU.f2h_sdram0_data">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection kind="clock" version="17.0" start="CLOCK.clk" end="LED_ARRAY.clk" />
  <connection kind="clock" version="17.0" start="CLOCK.clk" end="MM_BRIDGE.clk" />
  <connection kind="clock" version="17.0" start="CLOCK.clk" end="SWITCH_ARRAY.clk" />
+ <connection kind="clock" version="17.0" start="CLOCK.clk" end="JTAG_DEBUG.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="CLOCK.clk"
+   end="ARM_MCU.f2h_sdram0_clock" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="CLOCK.clk"
+   end="ARM_MCU.f2h_sdram_ref_clock" />
  <connection
    kind="clock"
    version="17.0"
    start="CLOCK.clk"
    end="ARM_MCU.h2f_lw_axi_clock" />
  <connection
-   kind="interrupt"
+   kind="reset"
    version="17.0"
-   start="ARM_MCU.f2h_irq0"
-   end="SWITCH_ARRAY.irq">
-  <parameter name="irqNumber" value="0" />
- </connection>
+   start="CLOCK.clk_reset"
+   end="JTAG_DEBUG.clk_reset" />
  <connection
    kind="reset"
    version="17.0"

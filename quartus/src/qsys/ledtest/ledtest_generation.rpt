@@ -1,11 +1,13 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate D:\GITHUB\de10nano_ledtest\quartus\src\qsys\ledtest.qsys --block-symbol-file --output-directory=D:\GITHUB\de10nano_ledtest\quartus\src\qsys\ledtest --family="Cyclone V" --part=5CSEBA6U23I7
+Info: qsys-generate H:\temp\de10nano_ledtest\quartus\src\qsys\ledtest.qsys --block-symbol-file --output-directory=H:\temp\de10nano_ledtest\quartus\src\qsys\ledtest --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading qsys/ledtest.qsys
 Progress: Reading input file
 Progress: Adding ARM_MCU [altera_hps 17.0]
 Progress: Parameterizing module ARM_MCU
 Progress: Adding CLOCK [clock_source 17.0]
 Progress: Parameterizing module CLOCK
+Progress: Adding JTAG_DEBUG [altera_jtag_avalon_master 17.0]
+Progress: Parameterizing module JTAG_DEBUG
 Progress: Adding LED_ARRAY [altera_avalon_pio 17.0]
 Progress: Parameterizing module LED_ARRAY
 Progress: Adding MM_BRIDGE [altera_avalon_mm_bridge 17.0]
@@ -23,13 +25,15 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate D:\GITHUB\de10nano_ledtest\quartus\src\qsys\ledtest.qsys --synthesis=VERILOG --output-directory=D:\GITHUB\de10nano_ledtest\quartus\src\qsys\ledtest\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Info: qsys-generate H:\temp\de10nano_ledtest\quartus\src\qsys\ledtest.qsys --synthesis=VERILOG --output-directory=H:\temp\de10nano_ledtest\quartus\src\qsys\ledtest\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading qsys/ledtest.qsys
 Progress: Reading input file
 Progress: Adding ARM_MCU [altera_hps 17.0]
 Progress: Parameterizing module ARM_MCU
 Progress: Adding CLOCK [clock_source 17.0]
 Progress: Parameterizing module CLOCK
+Progress: Adding JTAG_DEBUG [altera_jtag_avalon_master 17.0]
+Progress: Parameterizing module JTAG_DEBUG
 Progress: Adding LED_ARRAY [altera_avalon_pio 17.0]
 Progress: Parameterizing module LED_ARRAY
 Progress: Adding MM_BRIDGE [altera_avalon_mm_bridge 17.0]
@@ -45,21 +49,22 @@ Info: ledtest.ARM_MCU: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: ledtest.SWITCH_ARRAY: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: ledtest: Generating ledtest "ledtest" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master ARM_MCU.h2f_lw_axi_master and slave MM_BRIDGE.s0 because the master is of type axi and the slave is of type avalon.
-Warning: ARM_MCU.f2h_irq0: Cannot connect clock for irq_mapper.sender
-Warning: ARM_MCU.f2h_irq0: Cannot connect reset for irq_mapper.sender
-Warning: ARM_MCU.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
-Warning: ARM_MCU.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
+Info: Interconnect is inserted between master JTAG_DEBUG.master and slave ARM_MCU.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 27 bit wide.
+Info: Interconnect is inserted between master JTAG_DEBUG.master and slave ARM_MCU.f2h_sdram0_data because the master has readdata signal 32 bit wide, but the slave is 256 bit wide.
+Info: Interconnect is inserted between master JTAG_DEBUG.master and slave ARM_MCU.f2h_sdram0_data because the master has writedata signal 32 bit wide, but the slave is 256 bit wide.
+Info: Interconnect is inserted between master JTAG_DEBUG.master and slave ARM_MCU.f2h_sdram0_data because the master has byteenable signal 4 bit wide, but the slave is 32 bit wide.
 Info: ARM_MCU: "Running  for module: ARM_MCU"
 Info: ARM_MCU: HPS Main PLL counter settings: n = 0  m = 63
 Info: ARM_MCU: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: ARM_MCU: "ledtest" instantiated altera_hps "ARM_MCU"
+Info: JTAG_DEBUG: "ledtest" instantiated altera_jtag_avalon_master "JTAG_DEBUG"
 Info: LED_ARRAY: Starting RTL generation for module 'ledtest_LED_ARRAY'
-Info: LED_ARRAY:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_LED_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0001_LED_ARRAY_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0001_LED_ARRAY_gen//ledtest_LED_ARRAY_component_configuration.pl  --do_build_sim=0  ]
+Info: LED_ARRAY:   Generation command is [exec D:/intelfpga/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/17.0/quartus/bin64/perl/lib -I D:/intelfpga/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/17.0/quartus/sopc_builder/bin -I D:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_LED_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7393_1446660428640662915.dir/0043_LED_ARRAY_gen/ --quartus_dir=D:/intelfpga/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7393_1446660428640662915.dir/0043_LED_ARRAY_gen//ledtest_LED_ARRAY_component_configuration.pl  --do_build_sim=0  ]
 Info: LED_ARRAY: Done RTL generation for module 'ledtest_LED_ARRAY'
 Info: LED_ARRAY: "ledtest" instantiated altera_avalon_pio "LED_ARRAY"
 Info: MM_BRIDGE: "ledtest" instantiated altera_avalon_mm_bridge "MM_BRIDGE"
 Info: SWITCH_ARRAY: Starting RTL generation for module 'ledtest_SWITCH_ARRAY'
-Info: SWITCH_ARRAY:   Generation command is [exec D:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_SWITCH_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0003_SWITCH_ARRAY_gen/ --quartus_dir=D:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7378_7594729587408503506.dir/0003_SWITCH_ARRAY_gen//ledtest_SWITCH_ARRAY_component_configuration.pl  --do_build_sim=0  ]
+Info: SWITCH_ARRAY:   Generation command is [exec D:/intelfpga/17.0/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/17.0/quartus/bin64/perl/lib -I D:/intelfpga/17.0/quartus/sopc_builder/bin/europa -I D:/intelfpga/17.0/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/17.0/quartus/sopc_builder/bin -I D:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ledtest_SWITCH_ARRAY --dir=C:/Users/nhasbun/AppData/Local/Temp/alt7393_1446660428640662915.dir/0045_SWITCH_ARRAY_gen/ --quartus_dir=D:/intelfpga/17.0/quartus --verilog --config=C:/Users/nhasbun/AppData/Local/Temp/alt7393_1446660428640662915.dir/0045_SWITCH_ARRAY_gen//ledtest_SWITCH_ARRAY_component_configuration.pl  --do_build_sim=0  ]
 Info: SWITCH_ARRAY: Done RTL generation for module 'ledtest_SWITCH_ARRAY'
 Info: SWITCH_ARRAY: "ledtest" instantiated altera_avalon_pio "SWITCH_ARRAY"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -67,40 +72,61 @@ Info: mm_interconnect_0: "ledtest" instantiated altera_mm_interconnect "mm_inter
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "ledtest" instantiated altera_mm_interconnect "mm_interconnect_1"
-Info: irq_mapper: "ledtest" instantiated altera_irq_mapper "irq_mapper"
-Info: irq_mapper_001: "ledtest" instantiated altera_irq_mapper "irq_mapper_001"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_2: "ledtest" instantiated altera_mm_interconnect "mm_interconnect_2"
 Info: rst_controller: "ledtest" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "ARM_MCU" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "ARM_MCU" instantiated altera_hps_io "hps_io"
+Info: jtag_phy_embedded_in_jtag_master: "JTAG_DEBUG" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: timing_adt: "JTAG_DEBUG" instantiated timing_adapter "timing_adt"
+Info: fifo: "JTAG_DEBUG" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "JTAG_DEBUG" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "JTAG_DEBUG" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "JTAG_DEBUG" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "JTAG_DEBUG" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "JTAG_DEBUG" instantiated channel_adapter "p2b_adapter"
 Info: MM_BRIDGE_s0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "MM_BRIDGE_s0_translator"
 Info: ARM_MCU_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "ARM_MCU_h2f_lw_axi_master_agent"
 Info: MM_BRIDGE_s0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "MM_BRIDGE_s0_agent"
-Info: MM_BRIDGE_s0_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "MM_BRIDGE_s0_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: MM_BRIDGE_s0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "MM_BRIDGE_s0_burst_adapter"
-Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: MM_BRIDGE_m0_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "MM_BRIDGE_m0_translator"
 Info: MM_BRIDGE_m0_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "MM_BRIDGE_m0_agent"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
 Info: MM_BRIDGE_m0_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "MM_BRIDGE_m0_limiter"
-Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file D:/GITHUB/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: ARM_MCU_f2h_sdram0_data_cmd_width_adapter: "mm_interconnect_2" instantiated altera_merlin_width_adapter "ARM_MCU_f2h_sdram0_data_cmd_width_adapter"
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file H:/temp/de10nano_ledtest/quartus/src/qsys/ledtest/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_2" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: ledtest: Done "ledtest" with 35 modules, 92 files
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: ledtest: Done "ledtest" with 50 modules, 116 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

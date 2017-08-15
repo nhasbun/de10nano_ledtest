@@ -15,6 +15,7 @@ module ledtest (
 	hps_io_hps_io_emac1_inst_RXD1,
 	hps_io_hps_io_emac1_inst_RXD2,
 	hps_io_hps_io_emac1_inst_RXD3,
+	jtag_debug_master_reset_reset,
 	led_array_io_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -49,6 +50,7 @@ module ledtest (
 	input		hps_io_hps_io_emac1_inst_RXD1;
 	input		hps_io_hps_io_emac1_inst_RXD2;
 	input		hps_io_hps_io_emac1_inst_RXD3;
+	output		jtag_debug_master_reset_reset;
 	output	[7:0]	led_array_io_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
