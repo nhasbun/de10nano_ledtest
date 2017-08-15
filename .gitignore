@@ -14,3 +14,4 @@ quartus/src/_.sublime-workspace
 *.sublime-workspace
 quartus/src/qsys/.qsys_edit/preferences.xml
 quartus/software/
+quartus/.qsys_edit/
