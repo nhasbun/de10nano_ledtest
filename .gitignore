@@ -15,3 +15,5 @@ quartus/src/_.sublime-workspace
 quartus/src/qsys/.qsys_edit/preferences.xml
 quartus/software/
 quartus/.qsys_edit/
+quartus/new_rtl_netlist
+quartus/old_rtl_netlist
